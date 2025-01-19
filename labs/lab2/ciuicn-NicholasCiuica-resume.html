@@ -12,17 +12,19 @@
       }
       html {
          width: 100%;
+         background-color: aliceblue;
       }
 
       body {
-         width: 95%;
+         width: 75%;
+         background-color: white;
+         margin-left: auto;
+         margin-right: auto;
          font-family: Arial, Helvetica, sans-serif;
          line-height: 1.3;
+         padding: 40px;
+         padding-top: 60px;
          /* overflow: hidden; */
-      }
-
-      .leader {
-         color: blue;
       }
 
       h1 {
@@ -32,8 +34,17 @@
          font-variant: small-caps;
       }
 
+      h1 a {
+         text-decoration: none;
+         color: black;
+      }
+
       h2 {
          font-size: 1.2em;
+      }
+
+      h3 span {
+         font-weight: normal;
       }
 
       ul {
@@ -47,13 +58,14 @@
       #contactInfo {
          border-top: 2px solid #333;
          border-bottom: 2px solid #333;
-         padding: 4px 0 4px 0;
+         padding: 10px 0;
          text-align: center;
          white-space: nowrap;
       }
 
       #contactInfo li {
          display: inline;
+         font-weight: bold;
          list-style: none;
          margin: 0 0.25em 0 0.25em;
       }
@@ -66,8 +78,8 @@
          display: grid;
          grid-template-columns: min-content 1fr;
          width: 100%;
-         grid-gap: 15px;
-         padding: 30px;
+         grid-gap: 15px 40px;
+         padding-top: 30px;
       }
 
       #container > div {
@@ -83,7 +95,7 @@
 <body>
    <h1><a href="http://rpi.edu">Nicholas Ciuica</a></h1>
    <ul id="contactInfo">
-      <li>16 Potter Ave</li>
+      <li>16 Potter Ave, Unit #4</li>
       <li>Plainville, MA 02762</li>
       <li>857-364-1088</li>
       <li>nick.ciuica@gmail.com</li>
@@ -105,18 +117,18 @@
       <h2>EDUCATION</h2>
       <div>
          <div>
-            <h3>Rensselaer Polytechnic Institute, B.S. in Computer Science</h3>
-            Troy, NY<span class="timeframe">August 2024 - Present</span><br>
+            <h3>Rensselaer Polytechnic Institute, <span>Troy, NY</span></h3>
+            <strong>B.S. in Computer Science</strong><span class="timeframe">August 2024 - Present</span><br>
             <p>
                4.0 GPA, Rensselaer Medal Merit Scholarship Recipient<br>
-               <em>Relevant Coursework:</em>
-               <ul>
-                  <li>CSCI-2700, Intro. To Rensselaer Center for Open Source</li>
-                  <li>CSCI-2200, Foundations of Computer Science</li>
-                  <li>CSCI-1200, Data Structures </li>
-                  <li>MATH-2010, Multivariable Calculus and Matrix Algebra</li>
-               </ul>
+               <em>Relevant Coursework (and Grade is Completed):</em>
             </p>
+            <ul>
+               <li>CSCI-2700, Intro. To Rensselaer Center for Open Source</li>
+               <li>CSCI-2200, Foundations of Computer Science</li>
+               <li>A in CSCI-1200, Data Structures </li>
+               <li>A in MATH-2010, Multivariable Calculus and Matrix Algebra</li>
+            </ul>
          </div>
       </div>
    
@@ -158,6 +170,29 @@
                <li>Our team won award and cash prize for project “Emission Mission”</li>
                <li>Goal was to teach kids about energy sources using a game</li>
                <li>Project GitHub: <a href="https://github.com/NyssaGandhi/HackRPI_UrbanUpgrades">https://github.com/NyssaGandhi/HackRPI_UrbanUpgrades</a></li>
+            </ul>
+         </div>
+      </div>
+
+      <h2>WORK EXPERIENCE</h2>
+      <div>
+         <div>
+            <h3>Skechers, Wrentham Outlets, <span>Wrentham, MA</span></h3>
+            <strong>Sales Associate</strong><span class="timeframe">June 2024 - August 2024</span><br>
+            <ul>
+               <li>Stocked and organized shelves to maintain store visual appeal.</li>
+               <li>Handled cash and card transactions efficiently.</li>
+               <li>Utilized foreign language skills to make customers feel welcomed.</li>
+            </ul>
+         </div>
+
+         <div>
+            <h3>LiveNation, Xfinity Center, <span>Mansfield, MA</span></h3>
+            <strong>Parking Attendant</strong><span class="timeframe">May 2024 - July 2024</span><br>
+            <ul>
+               <li>Answered general questions about parking and venue facilities.</li>
+               <li>Ensured smooth entry and exit of traffic during peak hours.</li>
+               <li>Conducted regular patrols and reported any suspicious activity.</li>
             </ul>
          </div>
       </div>
