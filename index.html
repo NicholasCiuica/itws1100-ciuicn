@@ -1,39 +1,98 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nick's First Azure Server</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
-  </head>
-  <body>
-    <div class="block centeredtext">
-      <h1>Nick's First Azure Server</h1>
-      <p>I think it's really cool!</p>
-    </div>
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Nick's First Azure Server</title>
+      <style>
+         * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+         }
 
-    <div class="block centeredtext">
-      <p>
-        Uses GitHub as an intermediary between coding on my local machine and deploying code on a server. 
-        The links to the GitHub repository and Azure page are below:
-      </p>
-      <a href="https://github.com/NicholasCiuica/itws1100-ciuicn">
-        <img class="logo" src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="GitHub Logo">
-      </a>
-      <a href="https://portal.azure.com/#view/Microsoft_Azure_DevTestLab/LabVirtualMachineMenuBlade/~/virtualMachine/id/%2Fsubscriptions%2F92cc93c6-57ae-4ede-ab97-56dd35308fb5%2Fresourcegroups%2Fstudent-dtlab%2Fproviders%2Fmicrosoft.devtestlab%2Flabs%2Fitws-student-dtlab-rpi%2Fvirtualmachines%2FciuicnRPI">
-        <img class="logo" src="https://swimburger.net/media/ppnn3pcl/azure.png" alt="Azure Logo">
-      </a>
-    </div>
+         body {
+            background-color: aliceblue;
+            font-size: 1.3rem;
+         }
 
-    <div class="block">
-      <h2>Links to Labs:</h2>
-      <ul>
-        <a href="./labs/lab02/ciuicn-NicholasCiuica-resume.html"><li>Lab 2</li></a>
-        <a href=""><li>Lab 3</li></a>
-        <a href=""><li>Lab 4</li></a>
-      </ul>
-    </div>
+         .block {
+            background-color: lightblue;
+            border-radius: 1rem;
+            margin: 1rem 2rem;
+            padding: 1rem 1rem 2rem 1rem;
+            border: 2px white;
+         }
 
-  </body>
+         .centeredtext {
+            text-align: center;
+         }
+
+         a {
+            text-decoration: none;
+            color: black;
+         }
+
+         /* List Styles */
+
+         ul {
+            margin-top: 0.5rem;
+            padding-left: 2rem;
+         }
+
+         li {
+            padding: 0.5rem 1rem;
+            border-radius: 1rem;
+            transition: background-color 0.5s;
+         }
+
+         li:hover {
+            background-color: skyblue;
+         }
+
+         li::marker {
+            content: '▶';
+         }
+
+         .logo {
+            margin: 1rem 1rem 0 1rem;
+            padding: 1rem;
+            border-radius: 1rem;
+            background-color: skyblue;
+            width: 120px;
+            height: auto;
+         }
+      </style>
+   </head>
+   
+   <body>
+      <div class="block centeredtext">
+         <h1>Nick's First Azure Server</h1>
+         <p>I think it's really cool!</p>
+      </div>
+
+      <div class="block centeredtext">
+         <p>
+            Uses GitHub as an intermediary between coding on my local machine and deploying code on a server. 
+            The links to the GitHub repository and Azure page are below:
+         </p>
+         <a href="https://github.com/NicholasCiuica/itws1100-ciuicn">
+            <img class="logo" src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="GitHub Logo">
+         </a>
+         <a href="https://portal.azure.com/#view/Microsoft_Azure_DevTestLab/LabVirtualMachineMenuBlade/~/virtualMachine/id/%2Fsubscriptions%2F92cc93c6-57ae-4ede-ab97-56dd35308fb5%2Fresourcegroups%2Fstudent-dtlab%2Fproviders%2Fmicrosoft.devtestlab%2Flabs%2Fitws-student-dtlab-rpi%2Fvirtualmachines%2FciuicnRPI">
+            <img class="logo" src="https://swimburger.net/media/ppnn3pcl/azure.png" alt="Azure Logo">
+         </a>
+      </div>
+
+      <div class="block">
+         <h2>Links to Labs:</h2>
+         <ul>
+            <a href="./labs/lab02/ciuicn-NicholasCiuica-resume.html"><li>Lab 2</li></a>
+            <a href=""><li>Lab 3</li></a>
+            <a href=""><li>Lab 4</li></a>
+         </ul>
+      </div>
+
+   </body>
 
 </html>
