@@ -4,42 +4,54 @@
   box-sizing: border-box;
 }
 
+body {
+  background-color: aliceblue;
+  font-size: 1.3rem;
+}
+
 .block {
+  background-color: lightblue;
   border-radius: 1rem;
-  margin: 1rem;
+  margin: 1rem 2rem;
   padding: 1rem 1rem 2rem 1rem;
   border: 2px white;
 }
 
-#a {
-  background-color: lightblue;
+.centeredtext {
   text-align: center;
-}
-
-#b {
-  background-color: bisque;
-  width: 60%;
-  float: left;
-  margin-top: 0rem;
-}
-
-#c {
-  background-color: aquamarine;
-  width: 60%;
-  float: right;
-  margin-top: 0rem;
 }
 
 a {
   text-decoration: none;
+  color: black;
 }
 
-#github-logo {
-  margin: 2rem 0 0 1rem;
-  width: 80px;
+/* List Styles */
+
+ul {
+  margin-top: 0.5rem;
+  padding-left: 2rem;
 }
 
-#azure-logo {
-  margin: 2rem 0 0 1rem;
-  width: 80px;
+li {
+  padding: 0.5rem 1rem;
+  border-radius: 1rem;
+  transition: background-color 0.5s;
+}
+
+li:hover {
+  background-color: skyblue;
+}
+
+li::marker {
+  content: '▶';
+}
+
+.logo {
+  margin: 1rem 1rem 0 1rem;
+  padding: 1rem;
+  border-radius: 1rem;
+  background-color: skyblue;
+  width: 120px;
+  height: auto;
 }
