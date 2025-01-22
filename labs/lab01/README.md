@@ -1,4 +1,4 @@
 Access passwords:
 
 rplotka user password: profPASS
- mojiso user password: taPASS
+mojiso user password: taPASS
