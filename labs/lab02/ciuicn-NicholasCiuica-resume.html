@@ -28,6 +28,43 @@
          /* overflow: hidden; */
       }
 
+      #container {
+         display: grid;
+         grid-template-columns: min-content 1fr;
+         width: 100%;
+         grid-gap: 15px 40px;
+         padding-top: 30px;
+      }
+
+      #container > div {
+         border-bottom: 1px solid black;
+      }
+
+      #container > div > div {
+         padding-bottom: 15px;
+      }
+      
+      #contactInfo {
+         border-top: 2px solid #333;
+         border-bottom: 2px solid #333;
+         padding: 10px 0;
+         text-align: center;
+         white-space: nowrap;
+      }
+
+      #contactInfo li {
+         display: inline;
+         font-weight: bold;
+         list-style: none;
+         margin: 0 0.25em 0 0.25em;
+      }
+
+      span.timeframe {
+         float: right;
+      }
+
+      /* Header Styles */
+      
       h1 {
          text-align: center;
          margin: 0;
@@ -48,6 +85,8 @@
          font-weight: normal;
       }
 
+      /* List Styles */
+
       ul {
          padding-left: 10px;
       }
@@ -60,45 +99,23 @@
          content: "\25CF";
       }
 
-      #contactInfo {
-         border-top: 2px solid #333;
-         border-bottom: 2px solid #333;
-         padding: 10px 0;
-         text-align: center;
-         white-space: nowrap;
-      }
+      /* Homepage Link Style */
 
-      #contactInfo li {
-         display: inline;
-         font-weight: bold;
-         list-style: none;
-         margin: 0 0.25em 0 0.25em;
-      }
-
-      span.timeframe {
-         float: right;
-      }
-
-      #container {
-         display: grid;
-         grid-template-columns: min-content 1fr;
-         width: 100%;
-         grid-gap: 15px 40px;
-         padding-top: 30px;
-      }
-
-      #container > div {
-         border-bottom: 1px solid black;
-      }
-
-      #container > div > div {
-         padding-bottom: 15px;
+      .homelink {
+         position: fixed;
+         top: 0;
+         left: 0;
+         margin: 10px;
+         font-family: serif;
       }
    </style>
 </head>
 
 <body>
+   <p class="homelink"><a href="./../../index.html">Home</a></p>
+
    <h1><a href="http://rpi.edu">Nicholas Ciuica</a></h1>
+
    <ul id="contactInfo">
       <li>16 Potter Ave, Unit #4</li>
       <li>Plainville, MA 02762</li>
@@ -114,7 +131,7 @@
          <div>
             <p>
                GitHub: <a href="https://github.com/NicholasCiuica">https://github.com/NicholasCiuica</a><br>
-               LinkedIn: <a href="https://www.linkedin.com/in/nick-ciuica-043b7a306/">www.linkedin.com/in/nick-ciuica-043b7a306</a>
+               LinkedIn: <a href="https://www.linkedin.com/in/nick-ciuica-043b7a306/">https://www.linkedin.com/in/nick-ciuica-043b7a306/</a>
             </p>
          </div>
       </div>
@@ -138,7 +155,7 @@
             <strong>B.S. in Computer Science</strong><span class="timeframe">August 2024 - Present</span><br>
             <p>
                4.0 GPA, Rensselaer Medal Merit Scholarship Recipient<br>
-               <em>Relevant Coursework (and Grade is Completed):</em>
+               <em>Relevant Coursework (and Grade if Completed):</em>
             </p>
             <ul>
                <li>CSCI-2700, Intro. To Rensselaer Center for Open Source</li>
@@ -171,7 +188,7 @@
             <ul>
                <li>Hackathon theme was "Urban Upgrades"</li>
                <li>Our team won award and cash prize for project “Emission Mission”</li>
-               <li>Goal was to teach kids about energy sources using a game</li>
+               <li>Goal was to teach kids about energy sources using a web game</li>
                <li>Project GitHub: <a href="https://github.com/NyssaGandhi/HackRPI_UrbanUpgrades">https://github.com/NyssaGandhi/HackRPI_UrbanUpgrades</a></li>
             </ul>
          </div>
@@ -181,17 +198,19 @@
       <div>
          <div>
             <h3>Programming</h3>
-            <p>Experience in C++, Java, Python, <br>
+            <p>
+               Experience in C++, Java, Python, <br>
                Web Design (HTML, CSS, JavaScript), <br>
-               R, C# (in Unity Engine)</p>
+               R, C# (in Unity Engine)
+            </p>
          </div>
 
          <div>
             <h3>Languages</h3>
             <ul>
-               <li>English	 (First Language)</li>
+               <li>English (First Language)</li>
                <li>Romanian (First Language)</li>
-               <li>Spanish	 (Classroom Study)</li>
+               <li>Spanish (Classroom Study)</li>
             </ul>
          </div>
       </div>
@@ -212,9 +231,9 @@
             <h3>LiveNation, Xfinity Center, <span>Mansfield, MA</span></h3>
             <strong>Parking Attendant</strong><span class="timeframe">May 2024 - July 2024</span><br>
             <ul>
-               <li>Answered general questions about parking and venue facilities.</li>
+               <li>Answered questions about parking and venue facilities.</li>
                <li>Ensured smooth entry and exit of traffic during peak hours.</li>
-               <li>Conducted regular patrols and reported any suspicious activity.</li>
+               <li>Conducted patrols and reported any suspicious activity.</li>
             </ul>
          </div>
       </div>
