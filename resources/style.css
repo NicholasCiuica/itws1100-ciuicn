@@ -1,0 +1,119 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  --background-color: aliceblue;
+  --primary-color: lightblue;
+  --secondary-color: rgb(200, 237, 249);
+}
+
+body {
+  background-color: aliceblue;
+  font-size: 1.25rem;
+}
+
+a {
+  cursor: pointer;
+}
+
+.logo {
+  width: 1rem;
+  height: auto;
+}
+
+/* Structure Styles */
+
+header {
+  background-color: var(--secondary-color);
+  text-align: center;
+  padding: 1rem;
+}
+
+header a {
+  color: black;
+}
+
+.block {
+  background-color: var(--primary-color);
+  border-radius: 1rem;
+  margin: 1rem 2rem;
+  padding: 1rem;
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  background-color: var(--primary-color);
+  width: 100%;
+  text-align: center;
+  padding: 1rem;
+}
+
+/* Navbar Styles */
+
+.navbar {
+  background-color: var(--primary-color);
+  text-align: center;
+  padding: 0.75rem 0;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: black;
+}
+
+.navbar ul {
+  list-style-type: none;
+}
+
+.navbar li {
+  display: inline;
+}
+
+.navbar a {
+  padding: 0.25rem 0.5rem;
+  min-width: 10rem;
+  border-radius: 1rem;
+  background-color: var(--secondary-color);
+  transition: background-color 0.25s;
+}
+
+.navbar a:hover {
+  background-color: var(--background-color);
+}
+
+/* Dropdown Styles */
+  /* code inspired by example from
+  https://www.w3schools.com/css/css_dropdowns.asp */
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+  text-align: left;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: var(--secondary-color);
+  border-radius: 1rem;
+  top: calc(100% + 0.25rem);
+  padding: 0.5rem 0;
+  z-index: 1;
+}
+
+.dropdown-content a {
+  display: block;
+
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover > .dropdown-content {
+  display: block;
+}
+
+/* Dropdowns within dropdowns appear to the right of their parent */
+.dropdown-content .dropdown-content {
+  top: -0.5rem;
+  left: 100%;
+}
