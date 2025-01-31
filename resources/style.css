@@ -12,10 +12,6 @@ body {
   font-size: 1.25rem;
 }
 
-a {
-  cursor: pointer;
-}
-
 .logo {
   width: 1rem;
   height: auto;
@@ -60,6 +56,8 @@ footer {
 .navbar a {
   text-decoration: none;
   color: black;
+  cursor: default;
+  user-select: none;
 }
 
 .navbar ul {
@@ -104,7 +102,7 @@ footer {
 
 .dropdown-content a {
   display: block;
-
+  cursor: pointer;
 }
 
 /* Show the dropdown menu on hover */
