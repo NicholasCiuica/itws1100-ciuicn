@@ -1,7 +1,4 @@
 GitHub ID: NicholasCiuica
 
 Access passwords:
-
-rplotka user password: profPASS
-
-mojiso user password: taPASS
+(have been removed as of Lab3. To my professor and TA: if you need the passwords again please email me.)

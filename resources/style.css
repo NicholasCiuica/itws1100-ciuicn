@@ -1,0 +1,144 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  --bg_color: aliceblue;
+  --primary-color: lightblue;
+  --secondary-color: rgb(200, 237, 249);
+}
+
+body {
+  background-color: var(--bg_color);
+  font-size: 1.25rem;
+}
+
+.logo {
+  width: 1rem;
+  height: auto;
+}
+
+/* Structure Styles */
+
+header {
+  background-color: var(--secondary-color);
+  text-align: center;
+  padding: 1rem;
+}
+
+header a {
+  color: black;
+}
+
+.block {
+  background-color: var(--primary-color);
+  border-radius: 1rem;
+  margin: 1.5rem 3rem;
+  padding: 1rem;
+  padding-bottom: 2rem;
+  transition: all 0.25s;
+}
+
+@counter-style stars {
+  system: cyclic;
+  symbols: "\2728" "\2B50" "\1F4AB" "\1F31F";
+  suffix: "";
+}
+
+.block ul {
+  margin-top: 0.5rem;
+  padding-left: 1.5rem;
+  list-style-type: stars;
+}
+
+.block li {
+  padding-left: 0.5rem;
+}
+
+.block:hover {
+  background-color: var(--secondary-color);
+  box-shadow: var(--primary-color) 0.25rem 0.25rem 0.5rem 0.125rem;
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  background-color: var(--primary-color);
+  width: 100%;
+  text-align: center;
+  padding: 1rem;
+}
+
+/* Navbar Styles */
+
+.navbar {
+  background-color: var(--primary-color);
+  text-align: center;
+  padding: 0.75rem 0;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: black;
+  cursor: default;
+  user-select: none;
+}
+
+.navbar ul {
+  list-style-type: none;
+}
+
+.navbar li {
+  display: inline;
+}
+
+.navbar a {
+  padding: 0.25rem 0.5rem;
+  min-width: 10rem;
+  border-radius: 1rem;
+  outline: 0 solid white;
+  background-color: var(--secondary-color);
+  transition: background-color 0.25s;
+}
+
+.navbar a:hover {
+  background-color: var(--bg_color);
+}
+
+.navbar a:active {
+  background-color: var(--primary-color);
+  outline: 2px solid white;
+}
+
+/* Dropdown Styles */
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+  text-align: left;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: var(--secondary-color);
+  border-radius: 1rem;
+  top: calc(100% + 0.25rem);
+  padding: 0.5rem 0;
+  z-index: 1;
+}
+
+.dropdown-content a {
+  display: block;
+  cursor: pointer;
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover > .dropdown-content {
+  display: block;
+}
+
+/* Dropdowns within dropdowns appear to the right of their parent */
+.dropdown-content .dropdown-content {
+  top: -0.5rem;
+  left: 100%;
+}
