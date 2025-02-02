@@ -2,7 +2,8 @@
 
 Nicholas Ciuica's ITWS-1100 personal website, hosted on an Azure server
 
-**Link to website homepage :**
+**Link to website homepage:**
+
 http://ciuicnrpi.eastus.cloudapp.azure.com/iit/
 
 Lab 1: setup GitHub and server
@@ -20,7 +21,9 @@ Google bookmarks system, which I use every day and find very simple and elegant.
 **List of websites that I've taken inspiration from:**
 
 My dropdown CSS code was inspired by the example from here:
+
 https://www.w3schools.com/css/css_dropdowns.asp
 
 I learned how to make custom list styles from here:
+
 https://developer.mozilla.org/en-US/docs/Web/CSS/list-style-type
