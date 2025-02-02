@@ -2,13 +2,13 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  --background-color: aliceblue;
+  --bg_color: aliceblue;
   --primary-color: lightblue;
   --secondary-color: rgb(200, 237, 249);
 }
 
 body {
-  background-color: aliceblue;
+  background-color: var(--bg_color);
   font-size: 1.25rem;
 }
 
@@ -32,8 +32,31 @@ header a {
 .block {
   background-color: var(--primary-color);
   border-radius: 1rem;
-  margin: 1rem 2rem;
+  margin: 1.5rem 3rem;
   padding: 1rem;
+  padding-bottom: 2rem;
+  transition: all 0.25s;
+}
+
+@counter-style stars {
+  system: cyclic;
+  symbols: "\2728" "\2B50" "\1F4AB" "\1F31F";
+  suffix: "";
+}
+
+.block ul {
+  margin-top: 0.5rem;
+  padding-left: 1.5rem;
+  list-style-type: stars;
+}
+
+.block li {
+  padding-left: 0.5rem;
+}
+
+.block:hover {
+  background-color: var(--secondary-color);
+  box-shadow: var(--primary-color) 0.25rem 0.25rem 0.5rem 0.125rem;
 }
 
 footer {
@@ -72,17 +95,21 @@ footer {
   padding: 0.25rem 0.5rem;
   min-width: 10rem;
   border-radius: 1rem;
+  outline: 0 solid white;
   background-color: var(--secondary-color);
   transition: background-color 0.25s;
 }
 
 .navbar a:hover {
-  background-color: var(--background-color);
+  background-color: var(--bg_color);
+}
+
+.navbar a:active {
+  background-color: var(--primary-color);
+  outline: 2px solid white;
 }
 
 /* Dropdown Styles */
-  /* code inspired by example from
-  https://www.w3schools.com/css/css_dropdowns.asp */
 
 .dropdown {
   position: relative;
