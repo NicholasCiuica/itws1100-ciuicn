@@ -1,9 +1,12 @@
 * {
   display: block;
+  box-sizing: border-box;
+  clear: both;
 }
 
 feed {
   width: 100%;
+  padding: 1rem;
   background-color: white;
 }
 
@@ -12,6 +15,10 @@ entry {
   border: 1px solid skyblue;
   margin: 1rem;
   padding: 1rem;
+}
+
+updated {
+  float: right;
 }
 
 title {

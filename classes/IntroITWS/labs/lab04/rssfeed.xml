@@ -6,39 +6,38 @@
     <title>RSS Feed</title>
     <description>Some info about my labs using RSS</description>
     <link>http://www.example.com/</link>
-    <lastBuildDate>Tue, 12 Oct 2010 00:01:00 +0000 </lastBuildDate>
-    <pubDate>Tue, 12 Oct 2010 00:01:00 +0000 </pubDate>
+    <pubDate>Thu, 13 Feb 2025 14:21:30 +0000 </pubDate>
 
     <item>
       <title>Lab 1</title>
       <description>Server Setup</description>
-      <link>http://www.wikipedia.org/</link>
-      <guid>http://www.example.com/uniqueStringPerItem</guid>
-      <pubDate>Tue, 12 Oct 2010 00:45:00 +0000 </pubDate>
+      <link>http://ciuicnrpi.eastus.cloudapp.azure.com/iit/classes/IntroITWS/labs/lab01</link>
+      <guid>http://ciuicnrpi.eastus.cloudapp.azure.com/iit/classes/IntroITWS/labs/lab01</guid>
+      <pubDate>Thu, 13 Feb 2025 14:21:32 +0000 </pubDate>
     </item>
 
     <item>
       <title>Lab 2</title>
       <description>HTML Resume</description>
-      <link>http://www.wikipedia.org/</link>
-      <guid>http://www.example.com/uniqueStringPerItem</guid>
-      <pubDate>Tue, 12 Oct 2010 00:45:00 +0000 </pubDate>
+      <link>http://ciuicnrpi.eastus.cloudapp.azure.com/iit/classes/IntroITWS/labs/lab02</link>
+      <guid>http://ciuicnrpi.eastus.cloudapp.azure.com/iit/classes/IntroITWS/labs/lab02</guid>
+      <pubDate>Thu, 13 Feb 2025 14:21:33 +0000 </pubDate>
     </item>
 
     <item>
       <title>Lab 3</title>
       <description>Information Architecture</description>
-      <link>http://www.wikipedia.org/</link>
-      <guid>http://www.example.com/uniqueStringPerItem</guid>
-      <pubDate>Tue, 12 Oct 2010 00:45:00 +0000 </pubDate>
+      <link>http://ciuicnrpi.eastus.cloudapp.azure.com/iit/classes/IntroITWS/labs/lab03</link>
+      <guid>http://ciuicnrpi.eastus.cloudapp.azure.com/iit/classes/IntroITWS/labs/lab03</guid>
+      <pubDate>Thu, 13 Feb 2025 14:21:39 +0000 </pubDate>
     </item>
 
     <item>
       <title>Lab 4</title>
       <description>XML Feeds</description>
-      <link>http://www.wikipedia.org/</link>
-      <guid>http://www.example.com/uniqueStringPerItem</guid>
-      <pubDate>Tue, 12 Oct 2010 00:45:00 +0000 </pubDate>
+      <link>http://ciuicnrpi.eastus.cloudapp.azure.com/iit/classes/IntroITWS/labs/lab04</link>
+      <guid>http://ciuicnrpi.eastus.cloudapp.azure.com/iit/classes/IntroITWS/labs/lab04</guid>
+      <pubDate>Thu, 13 Feb 2025 14:21:42 +0000 </pubDate>
     </item>
 
   </channel>
