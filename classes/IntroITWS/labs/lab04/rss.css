@@ -1,0 +1,26 @@
+* {
+  display: block;
+  box-sizing: border-box;
+  clear: both;
+}
+
+channel {
+  width: 100%;
+  padding: 1rem;
+  background-color: white;
+}
+
+item {
+  background-color: aliceblue;
+  border: 1px solid skyblue;
+  margin: 1rem;
+  padding: 1rem;
+}
+
+pubDate {
+  float: right;
+}
+
+title {
+  font-size: 2rem;
+}
