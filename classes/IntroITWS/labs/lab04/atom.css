@@ -1,0 +1,24 @@
+* {
+  display: block;
+}
+
+feed {
+  width: 100%;
+  background-color: white;
+}
+
+entry {
+  background-color: aliceblue;
+  border: 1px solid skyblue;
+  margin: 1rem;
+  padding: 1rem;
+}
+
+title {
+  font-size: 2rem;
+}
+
+author name {
+  font-size: 1.5rem;
+}
+

@@ -1,0 +1,48 @@
+<?xml-stylesheet type="text/css" href="atom.css"?>
+
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Atom  Feed</title>
+  <subtitle>Some info about my labs using Atom</subtitle>
+  <link href="http://example.org/feed/" rel="self"/>
+  <link href="http://example.org/"/>
+  <id>urn:uuid:60a76c80-d399-11d9-b91C-0003939e0af6</id>
+  <updated>2003-12-13T18:30:02Z</updated>
+
+  <author>
+    <name>Nicholas Ciuica</name>
+    <email>nick.ciuica@gmail.com</email>
+  </author>
+
+  <entry>
+    <title>Lab 1</title>
+    <summary>Server Setup</summary>
+    <link href="http://example.org/2003/12/13/atom03"/>
+    <id>urn:uuid:1225c695-cfb8-4ebb-aaaa-80da344efa6a</id>
+    <updated>2003-12-13T18:30:02Z</updated>
+  </entry>
+
+  <entry>
+    <title>Lab 2</title>
+    <summary>HTML Resume</summary>
+    <link href="http://example.org/2003/12/13/atom03"/>
+    <id>urn:uuid:1225c695-cfb8-4ebb-aaaa-80da344efa6a</id>
+    <updated>2003-12-13T18:30:02Z</updated>
+  </entry>
+
+  <entry>
+    <title>Lab 3</title>
+    <summary>Information Architecture</summary>
+    <link href="http://example.org/2003/12/13/atom03"/>
+    <id>urn:uuid:1225c695-cfb8-4ebb-aaaa-80da344efa6a</id>
+    <updated>2003-12-13T18:30:02Z</updated>
+  </entry>
+
+  <entry>
+    <title>Lab 4</title>
+    <summary>XML Feeds</summary>
+    <link href="http://example.org/2003/12/13/atom03"/>
+    <id>urn:uuid:1225c695-cfb8-4ebb-aaaa-80da344efa6a</id>
+    <updated>2003-12-13T18:30:02Z</updated>
+  </entry>
+
+</feed>

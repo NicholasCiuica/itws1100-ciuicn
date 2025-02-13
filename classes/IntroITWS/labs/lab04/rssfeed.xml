@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet type="text/css" href="rss.css"?>
+
+<rss version="2.0">
+  <channel>
+    <title>RSS Feed</title>
+    <description>Some info about my labs using RSS</description>
+    <link>http://www.example.com/</link>
+    <lastBuildDate>Tue, 12 Oct 2010 00:01:00 +0000 </lastBuildDate>
+    <pubDate>Tue, 12 Oct 2010 00:01:00 +0000 </pubDate>
+
+    <item>
+      <title>Lab 1</title>
+      <description>Server Setup</description>
+      <link>http://www.wikipedia.org/</link>
+      <guid>http://www.example.com/uniqueStringPerItem</guid>
+      <pubDate>Tue, 12 Oct 2010 00:45:00 +0000 </pubDate>
+    </item>
+
+    <item>
+      <title>Lab 2</title>
+      <description>HTML Resume</description>
+      <link>http://www.wikipedia.org/</link>
+      <guid>http://www.example.com/uniqueStringPerItem</guid>
+      <pubDate>Tue, 12 Oct 2010 00:45:00 +0000 </pubDate>
+    </item>
+
+    <item>
+      <title>Lab 3</title>
+      <description>Information Architecture</description>
+      <link>http://www.wikipedia.org/</link>
+      <guid>http://www.example.com/uniqueStringPerItem</guid>
+      <pubDate>Tue, 12 Oct 2010 00:45:00 +0000 </pubDate>
+    </item>
+
+    <item>
+      <title>Lab 4</title>
+      <description>XML Feeds</description>
+      <link>http://www.wikipedia.org/</link>
+      <guid>http://www.example.com/uniqueStringPerItem</guid>
+      <pubDate>Tue, 12 Oct 2010 00:45:00 +0000 </pubDate>
+    </item>
+
+  </channel>
+</rss>
