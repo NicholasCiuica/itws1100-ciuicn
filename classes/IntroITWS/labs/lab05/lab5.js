@@ -39,7 +39,7 @@ function validate(formObj) {
       alert(validationAlert);
       return false;
    }
-   alert("Successfully submitted" + formObj.comments.value);
+   alert("Successfully submitted");
    return true;
 }
 
