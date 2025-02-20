@@ -33,6 +33,7 @@
 
                <label class="field" for="comments">Comments:</label>
                <!-- onfocus does not have a click delay like onclick does so I used it instead -->
+               <!-- also onclick would result in unintended behaviour if this element is focused on without a click -->
                <div class="value"><textarea rows="4" cols="40" name="comments" id="comments"
                   onfocus="clearDefault(this)" onblur="addDefault(this)">Please enter your comments</textarea></div>
 
