@@ -45,21 +45,10 @@ $(document).ready(function () {
    // (Note that there already is a css style named ".red" in lab6.css)
 
    /* 
-      NOTE: commented out because this functionality is now 
-      being implemented with the .on() action in Problem 4.
-   */
-
-   // $("#labList li").click(function() {
-   //    if($(this).hasClass("red")) {
-   //       $(this).removeClass("red");
-   //    } else {
-   //       $(this).addClass("red");
-   //    }
-   // });
-
-   /* 
       NOTE: here I defined my own jQuery action to
-      be used in Problem 4
+      be used in Problem 4, you can see my implementation
+      for Problem 3 without the binding from Problem 4
+      commented below
    */
 
    $.fn.toggleRed = function() {
@@ -69,6 +58,14 @@ $(document).ready(function () {
          $(this).addClass("red");
       }
    }
+
+   // $("#labList li").click(function() {
+   //    if($(this).hasClass("red")) {
+   //       $(this).removeClass("red");
+   //    } else {
+   //       $(this).addClass("red");
+   //    }
+   // });
 
    // Problem 4 (10 pts): When a user clicks on the "Add a list item" button, add a new list item to the end of the list.
    // Problem 4b (10 pts) - what happens when you click on the new li?  Why? (Explain in your readme file)

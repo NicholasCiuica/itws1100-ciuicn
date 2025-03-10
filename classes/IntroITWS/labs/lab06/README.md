@@ -4,7 +4,7 @@ Question 4b:
   the labList ul because the action that selected these li elements and added this click functionality was run before
   these new li elements were made using the add list item
   function.
-  I would fix this by using the .on() action to bind the the li element's click functionality to the document. Whenever the document is clicked, if it's been clicked on one of the li elements within the labList li, it with trigger the li element's click functionality.
+  I would fix this by using the .on() action to bind the li element's click functionality to the document. Whenever the document is clicked, if it's been clicked on one of the li elements within the labList li, it with trigger the li element's click functionality.
 
 Notes from class:
   jQuery is a general library that simplifies interacting with the DOM
@@ -15,7 +15,7 @@ Notes from class:
 
   $ is shorthand for jQuery
   $(selector).action()
-  
+
   If another js library also uses $:
   var jq = jQuery.noConflict();
   define your own jQuery/$
