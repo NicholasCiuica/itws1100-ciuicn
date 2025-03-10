@@ -5,15 +5,14 @@
 // is fully loaded:
 $(document).ready(function () {
 
-   alert("The DOM is now loaded and can be manipulated.");
-   alert("The instructions for this lab are in the lab6.js file.");
+   //turning these off because they're annoying
+   //alert("The DOM is now loaded and can be manipulated.");
+   //alert("The instructions for this lab are in the lab6.js file.");
 
    // example event handler:
-   $('#labButton').click(function () {
-      alert('You\'ve clicked the lab button');
+   $("#labButton").click(function () {
+      alert("You\"ve clicked the lab button");
    });
-
-
 
    // Problem 1 (10 pts): When the user clicks on the <h1>,
    //change the 'your name' to your own name (ie Joe Smith)
@@ -22,31 +21,79 @@ $(document).ready(function () {
    //change the text size to 125% of normal
    // (note that there is already a class defined for the area where your name should go)
 
-
-
+   $("h1").click(function() {
+      $(".myName").text("Nicholas Ciuica")
+                  .css({ "font-variant": "small-caps",
+                         "color": "magenta",
+                         "font-size": "125%" });
+   });
 
    // Problem 2 (10 pts): Make the "lorem ipsum" paragraphs
    //   vanish over a 1 sec duration when a user clicks "Hide text";
    //   make it appear with a 2.1 second duration when a user clicks "Show text":
 
+   $("#hideText").click(function() {
+      $("#showHideBlock p").hide(1000);
+   });
+
+   $("#showText").click(function() {
+      $("#showHideBlock p").show(2100);
+   });
 
    // Problem 3 (10 pts): When a normal list item is clicked, make it turn red using addClass.
    //            When a red list item is clicked change it back (you need to look up the appropriate jQuery method to do this)
    // (Note that there already is a css style named ".red" in lab6.css)
 
+   /* 
+      NOTE: commented out because this functionality is now 
+      being implemented with the .on() action in Problem 4.
+   */
+
+   // $("#labList li").click(function() {
+   //    if($(this).hasClass("red")) {
+   //       $(this).removeClass("red");
+   //    } else {
+   //       $(this).addClass("red");
+   //    }
+   // });
+
+   /* 
+      NOTE: here I defined my own jQuery action to
+      be used in Problem 4
+   */
+
+   $.fn.toggleRed = function() {
+      if($(this).hasClass("red")) {
+         $(this).removeClass("red");
+      } else {
+         $(this).addClass("red");
+      }
+   }
 
    // Problem 4 (10 pts): When a user clicks on the "Add a list item" button, add a new list item to the end of the list.
    // Problem 4b (10 pts) - what happens when you click on the new li?  Why? (Explain in your readme file)
    //   ie if it works as after #3 above, why? if it doesn't, why not?  How would you fix it?
-
    // for 10 pts, fix it.
    //   (Note that you need to look up the appropriate jQuery method - discussed in class - to do this)
 
+   let listItemNumber = 6;
+   $("#AddListItem").click(function() {
+      const newListElement = $("<li></li>").text("List item " + listItemNumber);
+      $("#labList").append(newListElement);
+      listItemNumber++;
+   });
 
-
+   //fixing problem where these new li elements don't have click functionality:
+   $(document).on("click", "#labList li", function() {
+      $(this).toggleRed();
+   });
 
    // Problem 5 (10 pts): lookup another jquery method and use this code on the "Toggle Text"
    // link to show/hide the text:
+
+   $("#toggleText").click(function() {
+      $("#showHideBlock p").toggle();
+   });
 
    // Problems: 60 pts
    // Validity: 10 pts
