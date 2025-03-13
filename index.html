@@ -5,6 +5,29 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <title>Nick's Personal Website</title>
       <link rel="stylesheet" href="/iit/resources/style.css">
+
+      <!-- Replacing tooltips to make them styleable with jQuery UI -->
+      <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+      <script src="https://code.jquery.com/ui/1.14.1/jquery-ui.js"></script>
+      <script>
+         $(document).ready(function() {
+            $(document).tooltip();
+         });
+      </script>
+      <!-- CSS for jQuery UI tooltips -->
+      <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.3/themes/smoothness/jquery-ui.css">
+      <style>
+         .ui-tooltip {
+            background-color: aliceblue;
+            box-shadow: none;
+            outline: 2px dashed skyblue;
+         }
+         .ui-tooltip-content {
+            color: black;
+            font-size: 1rem;
+            font-family: serif;
+         }
+      </style>
    </head>
    
    <body>
@@ -70,13 +93,13 @@
          </ul>
       </div>
 
-      <div class="block">
+      <div class="block" title="These blocks are where I will show info">
          <p>
             This website uses GitHub as an intermediary between coding on my local machine and deploying code on a server. 
          </p>
       </div>
 
-      <div class="block">
+      <div class="block" title="These blocks are where I will show info">
          <p>
             Some fun facts about me while you're here:
          </p>
