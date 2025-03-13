@@ -5,39 +5,39 @@
 // is fully loaded:
 $(document).ready(function () {
 
-   //turning these off because they're annoying
-   //alert("The DOM is now loaded and can be manipulated.");
-   //alert("The instructions for this lab are in the lab6.js file.");
+   alert("The DOM is now loaded and can be manipulated.");
+   alert("The instructions for this lab are in the lab6.js file.");
 
    // example event handler:
-   $("#labButton").click(function () {
-      alert("You\"ve clicked the lab button");
+   $('#labButton').click(function () {
+      alert('You\'ve clicked the lab button');
    });
+
+
 
    // Problem 1 (10 pts): When the user clicks on the <h1>,
    //change the 'your name' to your own name (ie Joe Smith)
    //change the text to be your name in small caps
    //change the color to be something other than blue or black
-   //change the text size to 125% of normal
+   //change the text size to 200% of normal
    // (note that there is already a class defined for the area where your name should go)
 
    $("h1").click(function() {
       $(".myName").text("Nicholas Ciuica")
-                  .css({ "font-variant": "small-caps",
-                         "color": "magenta",
-                         "font-size": "125%" });
+                  .css({ "font-varient" : "small-caps",
+                         "color" : "magenta",
+                         "font-size" : "200%" });
    });
 
    // Problem 2 (10 pts): Make the "lorem ipsum" paragraphs
-   //   vanish over a 1 sec duration when a user clicks "Hide text";
-   //   make it appear with a 2.1 second duration when a user clicks "Show text":
+   //   vanish over a 2 sec duration when a user clicks "Hide text";
+   //   make it appear with a 3.3 second duration when a user clicks "Show text":
 
    $("#hideText").click(function() {
-      $("#showHideBlock p").hide(1000);
+      $("#showHideBlock p").hide(2000);
    });
-
    $("#showText").click(function() {
-      $("#showHideBlock p").show(2100);
+      $("#showHideBlock p").show(3300);
    });
 
    // Problem 3 (10 pts): When a normal list item is clicked, make it turn red using addClass.
@@ -45,10 +45,11 @@ $(document).ready(function () {
    // (Note that there already is a css style named ".red" in lab6.css)
 
    /* 
-      NOTE: here I defined my own jQuery action to
-      be used in Problem 4, you can see my implementation
-      for Problem 3 without the binding from Problem 4
-      commented below
+      NOTE: here I defined my own jQuery action to be used in Problem 5, but 
+      you can see my implementation for Problem 3 without the binding from 
+      Problem 5 commented below (if it was uncommented, then the list elements 
+      that exist before those added using the "Add list item" button would toggle 
+      red twice per click, once for the click action and once for the binding).
    */
 
    $.fn.toggleRed = function() {
@@ -68,20 +69,21 @@ $(document).ready(function () {
    // });
 
    // Problem 4 (10 pts): When a user clicks on the "Add a list item" button, add a new list item to the end of the list.
-   // Problem 4b (10 pts) - what happens when you click on the new li?  Why? (Explain in your readme file)
-   //   ie if it works as after #3 above, why? if it doesn't, why not?  How would you fix it?
-   // for 10 pts, fix it.
-   //   (Note that you need to look up the appropriate jQuery method - discussed in class - to do this)
 
-   let listItemNumber = 6;
+   let nextListNumber = 6;
    $("#AddListItem").click(function() {
-      const newListElement = $("<li></li>").text("List item " + listItemNumber);
-      $("#labList").append(newListElement);
-      listItemNumber++;
+      const newListItem = $("<li></li>").text("List item " + nextListNumber);
+      $("#labList").append(newListItem);
+      nextListNumber++;
    });
 
-   //fixing problem where these new li elements don't have click functionality:
+   // Problem 5 (10 pts) - what happens when you click on the new li?  Why? (Explain in your readme file)
+   //   ie if it works as after #3 above, why? if it doesn't, why not?  How would you fix it?
+   //   If it doesn't work - fix it.
+   //   (Note that you need to look up the appropriate jQuery method - discussed in class - to do this)
+
    $(document).on("click", "#labList li", function() {
+      // see Problem 3 for my implementation of toggleRed()
       $(this).toggleRed();
    });
 
@@ -92,13 +94,12 @@ $(document).ready(function () {
       $("#showHideBlock p").toggle();
    });
 
-   // Problems: 60 pts
+   // Problems: 50 pts
    // Validity: 10 pts
    // Website organization: 10 pts
    // Deployment: 10 pts
-   // Readme file: 10 pts
+   // Readme file: 20 pts - Explain the problem 5 issue and how you fixed it.
    // Total: 100 pts
-   // Bonus: 10 pts (for a max of 100 pts) if you fix 4b above
 
    /* When you are done:
      Post this lab to your iit website,
