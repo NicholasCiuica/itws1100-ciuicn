@@ -60,7 +60,7 @@ header a {
 }
 
 footer {
-  position: absolute;
+  position: fixed;
   bottom: 0;
   background-color: var(--primary-color);
   width: 100%;
