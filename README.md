@@ -6,6 +6,10 @@ Nicholas Ciuica's ITWS-1100 personal website, hosted on an Azure server
 
 http://ciuicnrpi.eastus.cloudapp.azure.com/iit/
 
+**Link to GitHub repo:**
+
+https://github.com/NicholasCiuica/itws1100-ciuicn
+
 Lab 1: setup GitHub and server
 
 Lab 2: wrote up resume in HTML
