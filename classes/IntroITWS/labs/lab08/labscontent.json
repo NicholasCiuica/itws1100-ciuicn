@@ -1,0 +1,46 @@
+{
+   "header": "Labs",
+   "text": "This is the ITWS-1100 labs folder landing page.",
+   "labs": [
+      {
+         "title": "Lab 1",
+         "desc": "Setup",
+         "link": "lab01/"
+      },
+      {
+         "title": "Lab 2",
+         "desc": "Resume",
+         "link": "lab02/"
+      },
+      {
+         "title": "Lab 3",
+         "desc": "Site Architecture",
+         "link": "lab03/"
+      },
+      {
+         "title": "Lab 4",
+         "desc": "RSS/Atom XML Feeds",
+         "link": "lab04/"
+      },
+      {
+         "title": "Lab 5",
+         "desc": "JavaScript",
+         "link": "lab05/"
+      },
+      {
+         "title": "Lab 6",
+         "desc": "JQuery",
+         "link": "lab06/"
+      },
+      {
+         "title": "Lab 7",
+         "desc": "Team Project Mockups",
+         "link": "lab07/"
+      },
+      {
+         "title": "Lab 8",
+         "desc": "JSON/AJAX",
+         "link": "lab08/"
+      }
+   ]
+}
