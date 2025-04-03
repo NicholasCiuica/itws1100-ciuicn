@@ -1,11 +1,11 @@
--- create the tables for our movies
+-- create the table for our movies
 CREATE TABLE `movies` (
    `movieid` int(10) unsigned NOT NULL AUTO_INCREMENT,
    `title` varchar(100) NOT NULL,
    `year` char(4) DEFAULT NULL,
    PRIMARY KEY (`movieid`)
 );
--- insert data into the tables
+-- insert data into the table
 INSERT INTO movies
 VALUES (1, "Elizabeth", "1998"),
    (2, "Black Widow", "2021"),
