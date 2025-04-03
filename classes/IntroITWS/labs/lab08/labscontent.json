@@ -41,6 +41,11 @@
          "title": "Lab 8",
          "desc": "JSON/AJAX",
          "link": "lab08/"
+      },
+      {
+         "title": "Lab 9",
+         "desc": "SQL/PHP",
+         "link": "lab09/"
       }
    ]
 }
