@@ -1,16 +1,15 @@
--- create the tables for our actors
-CREATE TABLE `actors` (
-   `actorid` int(10) unsigned NOT NULL AUTO_INCREMENT,
-   `last_name` varchar(100) NOT NULL,
-   `first_names` varchar(100) NOT NULL,
-   `dob` date NOT NULL,
-   PRIMARY KEY (`actorid`)
+-- create the table for our movie-actor relations
+-- uses a composite primary key because each movie has multiple actors
+CREATE TABLE `movie_actors` (
+   `movieid` int(10) unsigned NOT NULL,
+   `actorid` int(10) unsigned NOT NULL,
+   PRIMARY KEY (`actorid`, `movieid`)
 );
--- insert data into the tables
-INSERT INTO actors
-VALUES (1, "Pugh", "Florence", "1996-01-03"),
-   (2, "Kendrick", "Anna", "1985-08-09"),
-   (3, "McKellen", "Ian", "1939-05-25"),
-   (4, "Mortensen", "Viggo", "1958-10-20"),
-   (5, "Goodman", "John", "1952-06-20"),
-   (6, "Rush", "Geoffrey", "1951-07-06");
+-- insert data into the table
+INSERT INTO movie_actors
+VALUES (1, 6),
+   (2, 1),
+   (3, 5),
+   (4, 3),
+   (4, 4),
+   (5, 2);
