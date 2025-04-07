@@ -40,7 +40,7 @@ header a {
 
 .block:last-of-type {
   margin-bottom: 5rem;
-}
+}/
 
 @counter-style stars {
   system: cyclic;
