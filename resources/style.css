@@ -38,10 +38,6 @@ header a {
   transition: all 0.25s;
 }
 
-.block:last-of-type {
-  margin-bottom: 5rem;
-}
-
 @counter-style stars {
   system: cyclic;
   symbols: "\2728" "\2B50" "\1F4AB" "\1F31F";
@@ -56,6 +52,10 @@ header a {
 
 .block li {
   padding-left: 0.5rem;
+}
+
+.block:last-of-type {
+  margin-bottom: 5rem;
 }
 
 .block:hover {
