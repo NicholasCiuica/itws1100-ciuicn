@@ -20,7 +20,7 @@ include($_SERVER['DOCUMENT_ROOT'] . "/iit/quiz3/includes/nav.inc.php");
 
 <div class="block">
    Link to our group project's homepage:<br><br>
-   <a href="http://ciuicnrpi.eastus.cloudapp.azure.com/team09/pages/">http://ciuicnrpi.eastus.cloudapp.azure.com/team09/pages/</a>
+   <a href="../../../../../team09/pages/">../../../../../team09/pages/</a>
 </div>
 
 <div class="block">
