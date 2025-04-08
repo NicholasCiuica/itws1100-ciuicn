@@ -22,12 +22,12 @@ include($_SERVER['DOCUMENT_ROOT'] . "/iit/quiz3/includes/head.inc.php");
       },
       success: function(result) {
         alert(result);
-        if(valid) {
-          alert("Welcome " + username + "!");
-        } else {
-          alert("Failed to log in, username or password is incorrect. Please try again!");
-          loginPopup();
-        }
+        // if(valid) {
+        //   alert("Welcome " + username + "!");
+        // } else {
+        //   alert("Failed to log in, username or password is incorrect. Please try again!");
+        //   loginPopup();
+        // }
       }
     });
 
