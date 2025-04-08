@@ -37,8 +37,8 @@ include($_SERVER['DOCUMENT_ROOT'] . "/iit/quiz3/includes/nav.inc.php");
 
          for ($i = 0; $i < $numRecords; $i++) {
             $record = $result->fetch_assoc();
-            echo '<li><a href="' + $record["link"] + '">';
-            echo $record["title"] + ' (' + $record["desc"] + ')';
+            echo '<li><a href="' . $record["link"] . '">';
+            echo $record["title"] . ' (' . $record["desc"] . ')';
             echo '</a></li>';
          }
       ?>
