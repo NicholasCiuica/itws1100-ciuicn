@@ -12,31 +12,34 @@ include($_SERVER['DOCUMENT_ROOT'] . "/iit/quiz3/includes/head.inc.php");
 
 <!-- Validate user -->
 <?php
-  echo "test. ";
   require($_SERVER['DOCUMENT_ROOT'] ."/iit/quiz3/conn.php");
   $db = new mysqli($hostname, $username, $password, $database);
-  echo "test. ";
   if ($db->connect_error) {
     echo 'Could not connect to the database. Error:' . $db->connect_error ;
   }
-  echo "test. ";
   $isSignedIn = false;
   $isAdmin = false;
-  echo "test. ";
+
   if(isset($_POST["submit"])) {
     $loginUser = $_POST["user"];
     $loginPass = $_POST["pass"];
-    echo $loginUser . " " . $loginPass . ". ";
     //These sources helped me formulate my SQL query
       //https://stackoverflow.com/questions/4253960/sql-how-to-properly-check-if-a-record-exists
       //https://stackoverflow.com/questions/11784289/does-it-make-sense-to-use-limit-1-in-a-query-select-1
     $query = 'SELECT * FROM mySiteUsers WHERE user = "' . $loginUser . '" AND pass = "' . $loginPass . '" LIMIT 1';
-    echo "test. ";
     $result = $db->query($query);
-    echo "test. ";
     $numRecords = $result->num_rows;
-    echo $numRecords;
+    $record = $result->fetch_assoc();
+
+    if($numRecords > 0) {
+      $isSignedIn = true;
+    }
+    if($record["type"] == "admin") {
+      $isAdmin = true;
+    }
   }
+  echo $isSignedIn;
+  echo $isAdmin;
 ?>
 
 <!-- Have user sign in, or if they're already signed in, welcome them and display signout button -->
