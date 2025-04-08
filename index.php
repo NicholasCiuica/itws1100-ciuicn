@@ -1,5 +1,5 @@
 <?php
-  include("quiz3/includes/head.inc.php");
+  include("/quiz3/includes/head.inc.php");
 ?>
 
 <header>
@@ -9,7 +9,7 @@
 </header>
 
 <?php
-  include("quiz3/includes/nav.inc.php");
+  include("/quiz3/includes/nav.inc.php");
 ?>
 
 <div class="block" title="I use an Azure cloud instance for deployment. Links to GitHub and Azure under External Links!">
@@ -32,5 +32,5 @@
 </div>
 
 <?php
-  include("quiz3/includes/foot.inc.php");
+  include("/quiz3/includes/foot.inc.php");
 ?>

@@ -1,5 +1,5 @@
 <?php
-  include("../../../quiz3/includes/head.inc.php");
+  include("/quiz3/includes/head.inc.php");
 ?>
 
 <header>
@@ -9,7 +9,7 @@
 </header>
 
 <?php
-  include("../../../quiz3/includes/nav.inc.php");
+  include("/quiz3/includes/nav.inc.php");
 ?>
 
 <div class="block">
@@ -30,5 +30,5 @@
 </div>
 
 <?php
-  include("../../../quiz3/includes/foot.inc.php");
+  include("/quiz3/includes/foot.inc.php");
 ?>
