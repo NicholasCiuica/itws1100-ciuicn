@@ -1,6 +1,6 @@
 <?php
 echo $_SERVER['DOCUMENT_ROOT'];
-  include("/quiz3/includes/head.inc.php");
+  include("/iit/quiz3/includes/head.inc.php");
 ?>
 
 <header>
@@ -10,7 +10,7 @@ echo $_SERVER['DOCUMENT_ROOT'];
 </header>
 
 <?php
-  include("/quiz3/includes/nav.inc.php");
+  include("/iit/quiz3/includes/nav.inc.php");
 ?>
 
 <div class="block" title="I use an Azure cloud instance for deployment. Links to GitHub and Azure under External Links!">
@@ -33,5 +33,5 @@ echo $_SERVER['DOCUMENT_ROOT'];
 </div>
 
 <?php
-  include("/quiz3/includes/foot.inc.php");
+  include("/iit/quiz3/includes/foot.inc.php");
 ?>
