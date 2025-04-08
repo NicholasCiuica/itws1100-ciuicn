@@ -4,46 +4,55 @@
 include($_SERVER['DOCUMENT_ROOT'] . "/iit/quiz3/includes/head.inc.php");
 ?>
 
-<!-- User must log in -->
-<!-- https://www.w3schools.com/js/js_popup.asp -->
-<script>
-  function loginPopup() {
-    const username = prompt("Please enter your username:");
-    const password = prompt("Please enter your password:");
-    let valid = false;
-    
-    //send to php to validate with the users database
-    $.ajax({
-      type: "POST",
-      url: "/iit/quiz3/validate.php",
-      data: {
-        "user": username,
-        "pass": password
-      },
-      success: function(result) {
-        alert(result);
-        // if(valid) {
-        //   alert("Welcome " + username + "!");
-        // } else {
-        //   alert("Failed to log in, username or password is incorrect. Please try again!");
-        //   loginPopup();
-        // }
-      }
-    });
-
-  }
-  loginPopup();
-</script>
-
 <header>
   <a href="/iit/"><h3>Nick's Personal Website</h3></a>
   <h1>Homepage</h1>
   <p>Navigate using the dropdown menus below, click the underlined text above to return here</p>
 </header>
 
+<!-- Validate user -->
+<?php
+  include("conn.php");
+  $db = new mysqli($hostname, $username, $password, $database);
+
+  if ($db->connect_error) {
+    echo 'Could not connect to the database. Error:' . $db->connect_error ;
+  }
+
+  $isSignedIn = false;
+  $isAdmin = false;
+
+  if(isset($_POST["submit"])) {
+    $loginUser = $_POST["user"];
+    $loginPass = $_POST["pass"];
+  
+    //These sources helped me formulate my SQL query
+      //https://stackoverflow.com/questions/4253960/sql-how-to-properly-check-if-a-record-exists
+      //https://stackoverflow.com/questions/11784289/does-it-make-sense-to-use-limit-1-in-a-query-select-1
+    $query = 'SELECT * FROM mySiteUsers WHERE user = ' . $loginUser . ' AND pass = ' . $loginPass . ' LIMIT 1';
+    $result = $db->query($query);
+    $numRecords = $result->num_rows;
+    echo $numRecords;
+  }
+?>
+
+<!-- Have user sign in, or if they're already signed in, welcome them and display signout button -->
 <?php
 include($_SERVER['DOCUMENT_ROOT'] ."/iit/quiz3/includes/nav.inc.php");
 ?>
+
+<div class="block">
+  <h3>Sign in</h3>
+  <form id="addForm" name="addForm" action="index.php" method="post">
+    <fieldset>
+      <label for="user">Username:</label>
+      <input type="text" name="user" id="user">
+      <label for="pass">Password:</label>
+      <input type="text" name="pass" id="pass">
+      <input type="submit" value="Sign In" id="submit" name="submit">
+    </fieldset>
+  </form>
+</div>
 
 <div class="block" title="I use an Azure cloud instance for deployment. Links to GitHub and Azure under External Links!">
   <p>
