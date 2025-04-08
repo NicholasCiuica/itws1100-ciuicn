@@ -19,7 +19,7 @@ include($_SERVER['DOCUMENT_ROOT'] . "/iit/quiz3/includes/nav.inc.php");
    </p>
    <ul>
       <?php
-         include($_SERVER['DOCUMENT_ROOT'] . "/iit/quiz3/conn.php");
+         require($_SERVER['DOCUMENT_ROOT'] . "/iit/quiz3/conn.php");
          $db = new mysqli($hostname, $username, $password, $database);
 
          if ($db->connect_error) {

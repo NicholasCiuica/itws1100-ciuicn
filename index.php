@@ -12,7 +12,7 @@ include($_SERVER['DOCUMENT_ROOT'] . "/iit/quiz3/includes/head.inc.php");
 
 <!-- Validate user -->
 <?php
-  include("conn.php");
+  require($_SERVER['DOCUMENT_ROOT'] ."/iit/quiz3/conn.php");
   $db = new mysqli($hostname, $username, $password, $database);
 
   if ($db->connect_error) {
