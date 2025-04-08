@@ -1,4 +1,5 @@
 <?php
+echo $_SERVER['DOCUMENT_ROOT'];
   include("/quiz3/includes/head.inc.php");
 ?>
 
