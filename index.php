@@ -1,7 +1,7 @@
 <?php
   //using server root to get to includes
     //https://stackoverflow.com/questions/3952590/php-how-to-find-application-root
-  include($_SERVER['DOCUMENT_ROOT'] . "/iit/quiz3/includes/head.inc.php");
+include($_SERVER['DOCUMENT_ROOT'] . "/iit/quiz3/includes/head.inc.php");
 ?>
 
 <header>
@@ -11,7 +11,7 @@
 </header>
 
 <?php
-  include($_SERVER['DOCUMENT_ROOT'] ."/iit/quiz3/includes/nav.inc.php");
+include($_SERVER['DOCUMENT_ROOT'] ."/iit/quiz3/includes/nav.inc.php");
 ?>
 
 <div class="block" title="I use an Azure cloud instance for deployment. Links to GitHub and Azure under External Links!">
@@ -34,5 +34,5 @@
 </div>
 
 <?php
-  include($_SERVER['DOCUMENT_ROOT'] . "/iit/quiz3/includes/foot.inc.php");
+include($_SERVER['DOCUMENT_ROOT'] . "/iit/quiz3/includes/foot.inc.php");
 ?>
