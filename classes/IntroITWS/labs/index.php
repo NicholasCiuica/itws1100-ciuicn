@@ -19,8 +19,10 @@ include($_SERVER['DOCUMENT_ROOT'] . "/iit/quiz3/includes/nav.inc.php");
    </p>
    <ul>
       <?php
+         echo "Hello. ";
          include($_SERVER['DOCUMENT_ROOT'] . "/iit/quiz3/conn.php");
          $db = new mysqli($hostname, $username, $password, $database);
+         echo "trying to connect to db. ";
 
          if ($db->connect_error) {
             echo '<div class="messages">Could not connect to the database. Error: ';
@@ -30,6 +32,8 @@ include($_SERVER['DOCUMENT_ROOT'] . "/iit/quiz3/includes/nav.inc.php");
          $query = 'SELECT * FROM `myLabs` ORDER BY `title`';
          $result = $db->query($query);
          $numRecords = $result->num_rows;
+
+         echo "trying to load. ";
 
          for ($i = 0; $i < $numRecords; $i++) {
             $record = $result->fetch_assoc();
