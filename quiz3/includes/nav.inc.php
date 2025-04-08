@@ -8,7 +8,7 @@
               <ul>
                 <li>
                     <div class="dropdown">
-                      <a href="/iit/classes/IntroITWS/labs/labs.html">Labs</a>
+                      <a href="/iit/classes/IntroITWS/labs/">Labs</a>
                       <div class="dropdown-content">
                           <ul>
                             <li><a href="/iit/classes/IntroITWS/labs/lab01/">Lab 1</a></li>

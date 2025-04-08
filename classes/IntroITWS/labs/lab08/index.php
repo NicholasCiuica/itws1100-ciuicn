@@ -21,7 +21,7 @@ include($_SERVER['DOCUMENT_ROOT'] . "/iit/quiz3/includes/nav.inc.php");
 <div class="block" title="I had a really fun time using AJAX! If you can't tell this customizable tooltip was made using JQueryUI!">
    <p>
       Link to my labs page:<br><br>
-      <a href="../labs.html">labs.html</a>
+      <a href="../">labs landing page</a>
    </p>
 </div>
 
