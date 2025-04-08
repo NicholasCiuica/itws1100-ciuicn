@@ -21,7 +21,7 @@ include($_SERVER['DOCUMENT_ROOT'] . "/iit/quiz3/includes/head.inc.php");
         "pass": password
       },
       success: function(result) {
-        console.log(result);
+        alert(result);
       }
     });
 
