@@ -19,8 +19,10 @@ include($_SERVER['DOCUMENT_ROOT'] . "/iit/quiz3/includes/head.inc.php");
   }
   $isSignedIn = false;
   $isAdmin = false;
+  $loginUser = "";
+  $loginPass = "";
 
-  if(isset($_POST["submit"])) {
+  if(isset($_POST["signin"])) {
     $loginUser = $_POST["user"];
     $loginPass = $_POST["pass"];
     //These sources helped me formulate my SQL query
@@ -38,24 +40,33 @@ include($_SERVER['DOCUMENT_ROOT'] . "/iit/quiz3/includes/head.inc.php");
       $isAdmin = true;
     }
   }
-  echo $isSignedIn;
-  echo $isAdmin;
 ?>
 
-<!-- Have user sign in, or if they're already signed in, welcome them and display signout button -->
 <?php
 include($_SERVER['DOCUMENT_ROOT'] ."/iit/quiz3/includes/nav.inc.php");
 ?>
 
+<!-- Have user sign in  with a form, or if they're already signed in, welcome them and display signout button -->
 <div class="block">
-  <h3>Sign in</h3>
-  <form id="signInForm" name="signInForm" autocomplete="off" action="./" method="post">
-    <label for="user">Username:</label>
-    <input type="text" name="user" id="user">
-    <label for="pass">Password:</label>
-    <input type="text" name="pass" id="pass">
-    <input type="submit" value="Sign In" id="submit" name="submit">
-  </form>
+  <?php
+    if($isSignedIn) {
+      echo '<h3>Welcome, ' . $loginUser . '!</h3>';
+      echo
+      '<form id="signOutForm" name="signOutForm" action="./" method="post">
+        <input type="submit" value="Sign Out" id="signout" name="signout">
+      </form>';
+    } else {
+      echo '<h3>Sign in</h3>';
+      echo
+      '<form id="signInForm" name="signInForm" autocomplete="off" action="./" method="post">
+        <label for="user">Username:</label>
+          <input type="text" name="user" id="user">
+          <label for="pass">Password:</label>
+          <input type="text" name="pass" id="pass">
+          <input type="submit" value="Sign In" id="signin" name="signin">
+      </form>';
+    }
+  ?>
 </div>
 
 <div class="block" title="I use an Azure cloud instance for deployment. Links to GitHub and Azure under External Links!">
