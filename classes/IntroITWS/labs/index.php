@@ -13,27 +13,23 @@ include($_SERVER['DOCUMENT_ROOT'] . "/iit/quiz3/includes/nav.inc.php");
 ?>
 
 <!-- Content div to be filled using PHP -->
-<div class="block" title="Links to all my labs! This list is inserted here using AJAX!">
+<div class="block" title="Links to all my labs! This list is inserted here using PHP!">
    <p>
       This is the ITWS-1100 labs folder landing page.
    </p>
    <ul>
       <?php
-         echo "Hello. ";
          include($_SERVER['DOCUMENT_ROOT'] . "/iit/quiz3/conn.php");
          $db = new mysqli($hostname, $username, $password, $database);
-         echo "trying to connect to db. ";
 
          if ($db->connect_error) {
             echo '<div class="messages">Could not connect to the database. Error: ';
             echo $db->connect_error . '</div>';
          }
 
-         $query = 'SELECT * FROM `myLabs` ORDER BY `title`';
+         $query = 'SELECT * FROM `myLabs`';
          $result = $db->query($query);
          $numRecords = $result->num_rows;
-
-         echo "trying to load. ";
 
          for ($i = 0; $i < $numRecords; $i++) {
             $record = $result->fetch_assoc();

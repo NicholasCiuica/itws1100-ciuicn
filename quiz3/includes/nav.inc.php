@@ -11,16 +11,25 @@
                       <a href="/iit/classes/IntroITWS/labs/">Labs</a>
                       <div class="dropdown-content">
                           <ul>
-                            <li><a href="/iit/classes/IntroITWS/labs/lab01/">Lab 1</a></li>
-                            <li><a href="/iit/classes/IntroITWS/labs/lab02/">Lab 2</a></li>
-                            <li><a href="/iit/classes/IntroITWS/labs/lab03/">Lab 3</a></li>
-                            <li><a href="/iit/classes/IntroITWS/labs/lab04/">Lab 4</a></li>
-                            <li><a href="/iit/classes/IntroITWS/labs/lab05/">Lab 5</a></li>
-                            <li><a href="/iit/classes/IntroITWS/labs/lab06/">Lab 6</a></li>
-                            <li><a href="/iit/classes/IntroITWS/labs/lab07/">Lab 7</a></li>
-                            <li><a href="/iit/classes/IntroITWS/labs/lab08/">Lab 8</a></li>
-                            <li><a href="/iit/classes/IntroITWS/labs/lab09/">Lab 9</a></li>
-                            <li><a href="/iit/classes/IntroITWS/labs/lab10/">Lab 10</a></li>
+                            <?php
+                              include($_SERVER['DOCUMENT_ROOT'] . "/iit/quiz3/conn.php");
+                              $db = new mysqli($hostname, $username, $password, $database);
+
+                              if ($db->connect_error) {
+                                  echo '<div class="messages">Could not connect to the database. Error: ';
+                                  echo $db->connect_error . '</div>';
+                              }
+
+                              $query = 'SELECT * FROM `myLabs`';
+                              $result = $db->query($query);
+                              $numRecords = $result->num_rows;
+
+                              for ($i = 0; $i < $numRecords; $i++) {
+                                  $record = $result->fetch_assoc();
+                                  echo '<li><a href="/iit/classes/IntroITWS/labs/' . $record["link"] . '">';
+                                  echo $record["title"] . '</a></li>';
+                              }
+                            ?>
                           </ul>
                       </div>
                     </div>
