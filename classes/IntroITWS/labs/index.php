@@ -15,7 +15,7 @@ include($_SERVER['DOCUMENT_ROOT'] . "/iit/quiz3/includes/nav.inc.php");
 <!-- Content div to be filled using PHP -->
 <div class="block" title="Links to all my labs! This list is inserted here using AJAX!">
    <p>
-      "This is the ITWS-1100 labs folder landing page."
+      This is the ITWS-1100 labs folder landing page.
    </p>
    <ul>
       <?php
