@@ -12,20 +12,21 @@ include($_SERVER['DOCUMENT_ROOT'] . "/iit/quiz3/includes/head.inc.php");
 
 <!-- Validate user -->
 <?php
+  echo "test. ";
   require($_SERVER['DOCUMENT_ROOT'] ."/iit/quiz3/conn.php");
   $db = new mysqli($hostname, $username, $password, $database);
-
+  echo "test. ";
   if ($db->connect_error) {
     echo 'Could not connect to the database. Error:' . $db->connect_error ;
   }
-
+  echo "test. ";
   $isSignedIn = false;
   $isAdmin = false;
-
+  echo "test. ";
   if(isset($_POST["submit"])) {
     $loginUser = $_POST["user"];
     $loginPass = $_POST["pass"];
-  
+    echo "test. ";
     //These sources helped me formulate my SQL query
       //https://stackoverflow.com/questions/4253960/sql-how-to-properly-check-if-a-record-exists
       //https://stackoverflow.com/questions/11784289/does-it-make-sense-to-use-limit-1-in-a-query-select-1
@@ -43,7 +44,7 @@ include($_SERVER['DOCUMENT_ROOT'] ."/iit/quiz3/includes/nav.inc.php");
 
 <div class="block">
   <h3>Sign in</h3>
-  <form id="signInForm" name="signInForm" action="./" method="post">
+  <form id="signInForm" name="signInForm" autocomplete="off" action="./" method="post">
     <label for="user">Username:</label>
     <input type="text" name="user" id="user">
     <label for="pass">Password:</label>
