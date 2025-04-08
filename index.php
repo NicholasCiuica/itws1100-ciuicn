@@ -30,7 +30,7 @@ include($_SERVER['DOCUMENT_ROOT'] . "/iit/quiz3/includes/head.inc.php");
     //These sources helped me formulate my SQL query
       //https://stackoverflow.com/questions/4253960/sql-how-to-properly-check-if-a-record-exists
       //https://stackoverflow.com/questions/11784289/does-it-make-sense-to-use-limit-1-in-a-query-select-1
-    $query = 'SELECT * FROM mySiteUsers WHERE user = ' . $loginUser . ' AND pass = ' . $loginPass . ' LIMIT 1';
+    $query = 'SELECT * FROM mySiteUsers WHERE user = "' . $loginUser . '" AND pass = "' . $loginPass . '" LIMIT 1';
     echo "test. ";
     $result = $db->query($query);
     echo "test. ";
