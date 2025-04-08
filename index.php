@@ -43,14 +43,12 @@ include($_SERVER['DOCUMENT_ROOT'] ."/iit/quiz3/includes/nav.inc.php");
 
 <div class="block">
   <h3>Sign in</h3>
-  <form id="addForm" name="addForm" action="index.php" method="post">
-    <fieldset>
-      <label for="user">Username:</label>
-      <input type="text" name="user" id="user">
-      <label for="pass">Password:</label>
-      <input type="text" name="pass" id="pass">
-      <input type="submit" value="Sign In" id="submit" name="submit">
-    </fieldset>
+  <form id="signInForm" name="signInForm" action="./" method="post">
+    <label for="user">Username:</label>
+    <input type="text" name="user" id="user">
+    <label for="pass">Password:</label>
+    <input type="text" name="pass" id="pass">
+    <input type="submit" value="Sign In" id="submit" name="submit">
   </form>
 </div>
 
