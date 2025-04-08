@@ -26,7 +26,7 @@ include($_SERVER['DOCUMENT_ROOT'] . "/iit/quiz3/includes/head.inc.php");
   if(isset($_POST["submit"])) {
     $loginUser = $_POST["user"];
     $loginPass = $_POST["pass"];
-    echo "test. ";
+    echo $loginUser . " " . $loginPass . ". ";
     //These sources helped me formulate my SQL query
       //https://stackoverflow.com/questions/4253960/sql-how-to-properly-check-if-a-record-exists
       //https://stackoverflow.com/questions/11784289/does-it-make-sense-to-use-limit-1-in-a-query-select-1
