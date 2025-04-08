@@ -14,7 +14,8 @@
 
 <div class="block" title="I use an Azure cloud instance for deployment. Links to GitHub and Azure under External Links!">
   <p>
-    This website uses GitHub as an intermediary between coding on my local machine and deploying code on a server. 
+    This website uses GitHub as an intermediary between coding on my local machine and deploying code on a server.
+    I've learned a lot about PHP and SQL while making this website! 
   </p>
 </div>
 
