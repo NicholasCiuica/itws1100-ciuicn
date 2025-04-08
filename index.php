@@ -19,8 +19,10 @@ include($_SERVER['DOCUMENT_ROOT'] . "/iit/quiz3/includes/head.inc.php");
   }
   $isSignedIn = false;
   $isAdmin = false;
+  $invalidLogin = false;
   $loginUser = "";
   $loginPass = "";
+  $loginName = "";
 
   if(isset($_POST["signin"])) {
     $loginUser = $_POST["user"];
@@ -33,11 +35,16 @@ include($_SERVER['DOCUMENT_ROOT'] . "/iit/quiz3/includes/head.inc.php");
     $numRecords = $result->num_rows;
     $record = $result->fetch_assoc();
 
+    //check if this user exists
     if($numRecords > 0) {
       $isSignedIn = true;
-    }
-    if($record["type"] == "admin") {
-      $isAdmin = true;
+      $loginName = $record["name"];
+      if($record["type"] == "admin") {
+        $isAdmin = true;
+      }
+    //if they don't, display an error message
+    } else {
+      $invalidLogin = true;
     }
   }
 ?>
@@ -50,7 +57,7 @@ include($_SERVER['DOCUMENT_ROOT'] ."/iit/quiz3/includes/nav.inc.php");
 <div class="block">
   <?php
     if($isSignedIn) {
-      echo '<h3>Welcome, ' . $loginUser . '!</h3>';
+      echo '<h3>Welcome, ' . $loginName . '!</h3>';
       echo
       '<form id="signOutForm" name="signOutForm" action="./" method="post">
         <input type="submit" value="Sign Out" id="signout" name="signout">
@@ -65,6 +72,9 @@ include($_SERVER['DOCUMENT_ROOT'] ."/iit/quiz3/includes/nav.inc.php");
           <input type="text" name="pass" id="pass">
           <input type="submit" value="Sign In" id="signin" name="signin">
       </form>';
+      if($invalidLogin) {
+        echo '<br><p style="color:red">ERROR: Invalid username or password. Please try again.</p>'
+      }
     }
   ?>
 </div>
