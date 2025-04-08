@@ -1,5 +1,6 @@
 <?php
-echo $_SERVER['DOCUMENT_ROOT'];
+  //using server root to get to includes
+    //https://stackoverflow.com/questions/3952590/php-how-to-find-application-root
   include($_SERVER['DOCUMENT_ROOT'] . "/iit/quiz3/includes/head.inc.php");
 ?>
 
