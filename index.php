@@ -1,0 +1,35 @@
+<?php
+  include("includes/head.inc.php");
+?>
+
+<header>
+  <a href="/iit/"><h3>Nick's Personal Website</h3></a>
+  <h1>Homepage</h1>
+  <p>Navigate using the dropdown menus below, click the underlined text above to return here</p>
+</header>
+
+<?php
+  include("includes/nav.inc.php");
+?>
+
+<div class="block" title="I use an Azure cloud instance for deployment. Links to GitHub and Azure under External Links!">
+  <p>
+    This website uses GitHub as an intermediary between coding on my local machine and deploying code on a server. 
+  </p>
+</div>
+
+<div class="block" title="These blocks will usually display more important info lol">
+  <p>
+    Some fun facts about me while you're here:
+  </p>
+  <ul>
+    <li>I like art, especially drawing and watercolor</li>
+    <li>I'm a big fan of CSS and I love box-shadow</li>
+    <li>I can't stop playing modded Minecraft!!!</li>
+    <li>I play Magic the Gathering with my friends sometimes</li>
+  </ul>
+</div>
+
+<?php
+  include("includes/foot.inc.php");
+?>
