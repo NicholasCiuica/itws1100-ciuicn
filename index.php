@@ -73,7 +73,7 @@ include($_SERVER['DOCUMENT_ROOT'] ."/iit/quiz3/includes/nav.inc.php");
           <input type="submit" value="Sign In" id="signin" name="signin">
       </form>';
       if($invalidLogin) {
-        echo '<br><p style="color:red">ERROR: Invalid username or password. Please try again.</p>'
+        echo '<br><p style="color:red">ERROR: Invalid username or password. Please try again.</p>';
       }
     }
   ?>
