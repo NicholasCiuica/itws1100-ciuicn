@@ -2,13 +2,14 @@ $(document).ready(function() {
   $(".deleteLab").click(function() {
 
     // get the id of the clicked element's list item
-    const curId = $(this).closest("li").attr("id");
     const labName = $(this).closest("li").find("a").text();
-
+    
     if(confirm("Remove " + labName + "? (This action cannot be undone.)")) {
       
       // Extract the db id of the lab from the dom id of the clicked element
+      const curId = $(this).closest("li").attr("id");
       const labId = curId.substr(curId.indexOf("-") + 1);
+      alert(labId);
       
       $.ajax({
         type: "post",
