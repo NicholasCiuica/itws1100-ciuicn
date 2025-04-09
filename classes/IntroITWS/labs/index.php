@@ -26,6 +26,10 @@
       echo $db->connect_error . '</div>';
    }
 
+   $title = "";
+   $desc = "";
+   $link = "";
+
    $errors = "";
    $focusId == "";
 
@@ -52,11 +56,17 @@
       $link = $link . "/";
 
       if($errors == "") {
+         echo "test";
          $insQuery = "insert into myLabs (`title`,`desc`,`link`) values(?,?,?)";
+         echo "test";
          $statement = $db->prepare($insQuery);
+         echo "test";
          $statement->bind_param("sss", $lastNameForDb, $firstNamesForDb, $dobForDb);
+         echo "test";
          $statement->execute();
+         echo "test";
          $statement->close();
+         echo "test";
       }
    }
 ?>
@@ -69,17 +79,22 @@
          <h3>Add New Lab</h3>
          <form id="addLabForm" name="addLabForm" autocomplete="off" action="" method="post">
             <label for="title">Lab title:</label>
-            <input type="text" name="title" id="title">
+            <input type="text" name="title" id="title" value=';
+      if($errors != "") { echo $title; }
+      echo '>
             <br>
             <label for="desc">Short description:</label>
-            <input type="text" name="desc" id="desc">
+            <input type="text" name="desc" id="desc" value=';
+      if($errors != "") { echo $desc; }
+      echo '>
             <br>
             <label for="link">Name of the folder associated with this lab:</label>
-            <input type="text" name="link" id="link">
+            <input type="text" name="link" id="link" value=';
+      if($errors != "") { echo $link; }
+      echo '>
             <br>
             <input type="submit" value="Add Lab" id="add" name="add">
-         </form>
-      </div>';
+         </form>';
 
       if ($errors != '') {
          echo '<div class="messages"><h4>Lab could not be added, please correct the following errors:</h4><ul>';
@@ -91,6 +106,8 @@
          echo '  });';
          echo '</script>';
       }
+
+      echo '</div>';
    }
 ?>
 

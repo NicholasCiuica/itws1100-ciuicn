@@ -5,6 +5,8 @@ If I find the user, I sign them in and keep them signed in using session storage
 If a user goes to the labs homepage (now index.php in classes/IntroITWS/) while they are signed in as an admin user,
 I add a form to add new labs.
 
+I did not see a use for the myFooters or myProjects database tables when following the quiz instructions so I ended up not adding them.
+
 I used sample code from Lab 9 and various online sources to convert my web server's iit directory into a fully modularized, PHP-integrated website.
 
 Using server root to get to includes

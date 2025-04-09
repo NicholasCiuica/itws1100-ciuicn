@@ -9,4 +9,4 @@ CREATE TABLE `mySiteUsers` (
 
 INSERT INTO `mySiteUsers`(`id`, `user`, `pass`, `name`, `type`) VALUES 
 (0, "ciuicn", "secret", "Nicholas Ciuica", "admin"),
-(1, "teacher", "1234", "Professor Plotka or TA Ola", "user");
+(1, "teacher", "guess", "Professor Plotka or TA Ola", "user");
