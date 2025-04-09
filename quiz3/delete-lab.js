@@ -9,7 +9,6 @@ $(document).ready(function() {
       // Extract the db id of the lab from the dom id of the clicked element
       const curId = $(this).closest("li").attr("id");
       const labId = curId.substr(curId.indexOf("-") + 1);
-      alert(labId);
       
       $.ajax({
         type: "post",

@@ -12,7 +12,7 @@
   if (isset($_POST["id"])) {
     $labId = (int) $_POST["id"];
 
-    $query = "delete from actors where id = ?";
+    $query = "delete from myLabs where id = ?";
     $statement = $db->prepare($query);
     $statement->bind_param("i", $labId);
     $statement->execute();
