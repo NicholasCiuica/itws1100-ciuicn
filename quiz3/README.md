@@ -15,19 +15,23 @@ INSERT INTO `mySiteUsers`(`id`, `user`, `pass`, `name`, `type`) VALUES
 
 I used sample code from Lab 9 and various online sources to convert my web server's iit directory into a fully modularized, PHP-integrated website.
 
-Using server root to get to includes
-  https://stackoverflow.com/questions/3952590/php-how-to-find-application-root
+Using server root to get to includes  
+>https://stackoverflow.com/questions/3952590/php-how-to-find-application-root     
 
 Using session superglobal for all pages that care about who's signed in
-  https://stackoverflow.com/questions/7129498/write-session-start-on-1-page-or-all-pages
-  https://www.w3schools.com/php/php_sessions.asp
+>https://stackoverflow.com/questions/7129498/write-session-start-on-1-page-or-all-pages    
+https://www.w3schools.com/php/php_sessions.asp    
 
-I love ternary operators! glad PHP has them
-  https://www.php.net/manual/en/language.operators.comparison.php
+I love ternary operators! glad PHP has them  
+>https://www.php.net/manual/en/language.operators.comparison.php   
 
 empty is cool because it checks if a variable isn't set or converts to false
-  https://www.php.net/manual/en/function.empty.php
+>https://www.php.net/manual/en/function.empty.php   
 
-These sources helped me formulate my SQL queries
-  https://stackoverflow.com/questions/4253960/sql-how-to-properly-check-if-a-record-exists
-  https://stackoverflow.com/questions/11784289/does-it-make-sense-to-use-limit-1-in-a-query-select-1
+These sources helped me formulate my SQL queries  
+>https://stackoverflow.com/questions/4253960/sql-how-to-properly-check-if-a-record-exists   
+https://stackoverflow.com/questions/11784289/    does-it-make-sense-to-use-limit-1-in-a-query-select-1   
+
+Unset PHP after adding lab so that reloading doesn't resubmit  
+>//https://stackoverflow.com/questions/6320113/how-to-prevent-form-resubmission-when-page-is-refreshed-f5-ctrlr  
+//https://www.php.net/manual/en/function.unset.php    

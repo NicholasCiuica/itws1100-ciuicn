@@ -57,6 +57,9 @@
          $statement->bind_param("sss", $title, $desc, $linkForDb);
          $statement->execute();
          $statement->close();
+
+         //once a lab has been added, unset POST so that reloading doesn't resubmit
+         unset($_POST);
       }
    }
 ?>
