@@ -70,10 +70,13 @@
          <form id="addLabForm" name="addLabForm" autocomplete="off" action="" method="post">
             <label for="title">Lab title:</label>
             <input type="text" name="title" id="title">
+            <br>
             <label for="desc">Short description:</label>
             <input type="text" name="desc" id="desc">
+            <br>
             <label for="link">Name of the folder associated with this lab:</label>
             <input type="text" name="link" id="link">
+            <br>
             <input type="submit" value="Add Lab" id="add" name="add">
          </form>;
       </div>';

@@ -1,10 +1,6 @@
 <?php
-  //Using session superglobal for all pages that care about who's signed in
-    //https://stackoverflow.com/questions/7129498/write-session-start-on-1-page-or-all-pages
-    //https://www.w3schools.com/php/php_sessions.asp
+//session superglobal storage to keep users logged in
   session_start();
-  //Using server root to get to includes
-    //https://stackoverflow.com/questions/3952590/php-how-to-find-application-root
   include($_SERVER['DOCUMENT_ROOT'] . "/iit/quiz3/includes/head.inc.php");
 ?>
 
@@ -25,19 +21,17 @@
   if ($db->connect_error) {
     echo 'Could not connect to the database. Error:' . $db->connect_error ;
   }
-  $isSignedIn = false;
-  $isAdmin = false;
+  $isSignedIn = !empty($_SESSION["isSignedIn"]) ? $_SESSION["isSignedIn"] : false;
+  $isAdmin = !empty($_SESSION["isAdmin"]) ? $_SESSION["isAdmin"] : false;
+  $loginName = !empty($_SESSION["isAdmin"]) ? $_SESSION["isAdmin"] : "";
+  
   $invalidLogin = false;
   $loginUser = "";
   $loginPass = "";
-  $loginName = "";
 
   if(isset($_POST["signin"])) {
     $loginUser = trim($_POST["user"]);
     $loginPass = trim($_POST["pass"]);
-    //These sources helped me formulate my SQL query
-      //https://stackoverflow.com/questions/4253960/sql-how-to-properly-check-if-a-record-exists
-      //https://stackoverflow.com/questions/11784289/does-it-make-sense-to-use-limit-1-in-a-query-select-1
     $query = 'SELECT * FROM mySiteUsers WHERE user = "' . $loginUser . '" AND pass = "' . $loginPass . '" LIMIT 1';
     $result = $db->query($query);
     $numRecords = $result->num_rows;
@@ -55,7 +49,9 @@
       $invalidLogin = true;
     }
 
+    $_SESSION["isSignedIn"] = $isSignedIn;
     $_SESSION["isAdmin"] = $isAdmin;
+    $_SESSION["loginName"] = $loginName;
   }
 ?>
 
@@ -72,10 +68,12 @@
       echo '<h3>Sign in</h3>';
       echo
       '<form id="signInForm" name="signInForm" autocomplete="off" action="" method="post">
-        <label for="user">Username:</label>
+          <label for="user">Username:</label>
           <input type="text" name="user" id="user">
+          <br>
           <label for="pass">Password:</label>
           <input type="password" name="pass" id="pass">
+          <br>
           <input type="submit" value="Sign In" id="signin" name="signin">
       </form>';
       if($invalidLogin) {
