@@ -120,13 +120,13 @@
 
          for ($i = 0; $i < $numRecords; $i++) {
             $record = $result->fetch_assoc();
-            echo '<li id="lab' . $record["id"] . '">';
+            echo '<li id="lab-' . $record["id"] . '">';
             echo '<a href="' . $record["link"] . '">';
             echo $record["title"] . ' (' . $record["desc"] . ')';
             echo '</a>';
             if($_SESSION["isAdmin"]) {
-               //add a delete button to each displayed lab
-               echo '<img src="/iit/resources/delete.png" class="deleteLab" width="16" height="16" alt="delete lab"/>';
+               //is admin, add a delete button to each displayed lab
+               echo '<img src="/iit/resources/delete.png" class="deleteLab" alt="delete lab"/>';
             }
             echo '</li>';
          }

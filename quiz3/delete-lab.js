@@ -3,7 +3,7 @@ $(document).ready(function() {
 
     // get the id of the clicked element's list item
     const curId = $(this).closest("li").attr("id");
-    const labName = $(this).closest("a").text();
+    const labName = $(this).closest("li").find("a").text();
 
     if(confirm("Remove " + labName + "? (This action cannot be undone.)")) {
       
@@ -17,7 +17,7 @@ $(document).ready(function() {
         data: { "id" : labId },
 
         success: function() {
-          $("#lab" + curId).closest("li").remove();
+          $("#lab-" + curId).closest("li").remove();
           alert(labName + " deleted");
         },
 

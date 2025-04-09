@@ -22,6 +22,9 @@ body {
 
 .deleteLab {
   cursor: pointer;
+  width: 1rem;
+  height: 1rem;
+  float: right;
 }
 
 /* Structure Styles */
@@ -68,7 +71,7 @@ header a {
 }
 
 .block li {
-  padding-left: 0.5rem;
+  padding: 0 0.5rem;
 }
 
 .block:hover {
