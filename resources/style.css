@@ -7,22 +7,30 @@
   --secondary-color: rgb(200, 237, 249);
 }
 
-/* Error Message Styles */
-.messages {
-  color: red;
-}
-
 body {
   background-color: var(--bg_color);
   font-size: 1.25rem;
 }
+
+/* Error Message Styles */
+
+.messages {
+  color: red;
+}
+
+/* Delete Lab Button Styles */
+
+.deleteLab {
+  cursor: pointer;
+}
+
+/* Structure Styles */
 
 .logo {
   width: 1rem;
   height: auto;
 }
 
-/* Structure Styles */
 
 header {
   background-color: var(--secondary-color);

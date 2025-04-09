@@ -10,6 +10,7 @@
    <a href="/iit/"><h3>Nick's Personal Website</h3></a>
    <h1>Labs</h1>
    <p>Intro to ITWS</p>
+   <script type="text/javascript" src="/iit/quiz3/delete-lab.js"></script>   
 </header>
 
 <!-- Add new lab to database -->
@@ -119,9 +120,13 @@
 
          for ($i = 0; $i < $numRecords; $i++) {
             $record = $result->fetch_assoc();
-            echo '<li><a href="' . $record["link"] . '">';
+            echo '<li id="lab' . $record["id"] . '">';
+            echo '<a href="' . $record["link"] . '">';
             echo $record["title"] . ' (' . $record["desc"] . ')';
-            echo '</a></li>';
+            echo '</a>';
+            //add a delete button to each displayed lab
+            echo '<img src="/iit/resources/delete.png" class="deleteLab" width="16" height="16" alt="delete lab"/>';
+            echo '</li>';
          }
       ?>
    </ul>
