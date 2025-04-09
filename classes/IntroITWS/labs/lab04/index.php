@@ -1,5 +1,5 @@
 <?php
-include($_SERVER['DOCUMENT_ROOT'] . "/iit/quiz3/includes/head.inc.php");
+   include($_SERVER['DOCUMENT_ROOT'] . "/iit/quiz3/includes/head.inc.php");
 ?>
 
 <header>
@@ -9,7 +9,7 @@ include($_SERVER['DOCUMENT_ROOT'] . "/iit/quiz3/includes/head.inc.php");
 </header>
 
 <?php
-include($_SERVER['DOCUMENT_ROOT'] . "/iit/quiz3/includes/nav.inc.php");
+   include($_SERVER['DOCUMENT_ROOT'] . "/iit/quiz3/includes/nav.inc.php");
 ?>
 
 <div class="block">
@@ -27,5 +27,5 @@ include($_SERVER['DOCUMENT_ROOT'] . "/iit/quiz3/includes/nav.inc.php");
 </div>
 
 <?php
-include($_SERVER['DOCUMENT_ROOT'] . "/iit/quiz3/includes/foot.inc.php");
+   include($_SERVER['DOCUMENT_ROOT'] . "/iit/quiz3/includes/foot.inc.php");
 ?>

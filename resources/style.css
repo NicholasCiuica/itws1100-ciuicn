@@ -7,6 +7,11 @@
   --secondary-color: rgb(200, 237, 249);
 }
 
+/* Error Message Styles */
+.messages {
+  color: red;
+}
+
 body {
   background-color: var(--bg_color);
   font-size: 1.25rem;

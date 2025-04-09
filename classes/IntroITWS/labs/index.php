@@ -1,5 +1,9 @@
 <?php
-include($_SERVER['DOCUMENT_ROOT'] . "/iit/quiz3/includes/head.inc.php");
+  //Using session superglobal for all pages that care about who's signed in
+    //https://stackoverflow.com/questions/7129498/write-session-start-on-1-page-or-all-pages
+    //https://www.w3schools.com/php/php_sessions.asp
+   session_start();
+   include($_SERVER['DOCUMENT_ROOT'] . "/iit/quiz3/includes/head.inc.php");
 ?>
 
 <header>
@@ -9,8 +13,85 @@ include($_SERVER['DOCUMENT_ROOT'] . "/iit/quiz3/includes/head.inc.php");
 </header>
 
 <?php
-include($_SERVER['DOCUMENT_ROOT'] . "/iit/quiz3/includes/nav.inc.php");
+   include($_SERVER['DOCUMENT_ROOT'] . "/iit/quiz3/includes/nav.inc.php");
 ?>
+
+<!-- Add new lab to database -->
+<?php
+   require($_SERVER['DOCUMENT_ROOT'] . "/iit/quiz3/conn.php");
+   $db = new mysqli($hostname, $username, $password, $database);
+
+   if ($db->connect_error) {
+      echo '<div class="messages">Could not connect to the database. Error: ';
+      echo $db->connect_error . '</div>';
+   }
+
+   $errors = "";
+   $focusId == "";
+
+   if(isset($_POST["add"])) {
+      //based on code from Lab 9
+      $title = trim($_POST["title"]);
+      $desc = trim($_POST["desc"]);
+      $link = trim($_POST["link"]);
+
+      if ($title == '') {
+         $errors .= '<li>Title may not be blank</li>';
+         if ($focusId == '') $focusId = '#title';
+      }
+      if ($desc == '') {
+         $errors .= '<li>Description may not be blank</li>';
+         if ($focusId == '') $focusId = '#desc';
+      }
+      if ($link == '') {
+         $errors .= '<li>Folder name may not be blank</li>';
+         if ($focusId == '') $focusId = '#link';
+      }
+
+      //make the link string into a valid relative link pointing to a directory
+      $link = $link . "/";
+
+      if($errors == "") {
+         $insQuery = "insert into myLabs (`title`,`desc`,`link`) values(?,?,?)";
+         $statement = $db->prepare($insQuery);
+         $statement->bind_param("sss", $lastNameForDb, $firstNamesForDb, $dobForDb);
+         $statement->execute();
+         $statement->close();
+      }
+   }
+?>
+
+<!-- Form to add labs if admin -->
+<?php
+   if($_SESSION["isAdmin"] == true) {
+      echo '<h3>Add New Lab</h3>';
+      echo
+      '<div class="block">
+         <form id="addLabForm" name="addLabForm" autocomplete="off" action="" method="post">
+            <label for="title">Lab title:</label>
+            <input type="text" name="title" id="title">
+            <label for="desc">Short description:</label>
+            <input type="text" name="desc" id="desc">
+            <label for="link">Name of the folder associated with this lab:</label>
+            <input type="text" name="link" id="link">
+            <input type="submit" value="Add Lab" id="add" name="add">
+         </form>;
+      </div>';
+
+      if ($errors != '') {
+         echo '<div class="messages"><h4>Lab could not be added, please correct the following errors:</h4><ul>';
+         echo $errors;
+         echo '</ul></div>';
+         echo '<script type="text/javascript">';
+         echo '  $(document).ready(function() {';
+         echo '    $("' . $focusId . '").focus();';
+         echo '  });';
+         echo '</script>';
+      }
+   }
+?>
+
+
 
 <!-- Content div to be filled using PHP -->
 <div class="block" title="Links to all my labs! This list is inserted here using PHP!">
@@ -19,14 +100,6 @@ include($_SERVER['DOCUMENT_ROOT'] . "/iit/quiz3/includes/nav.inc.php");
    </p>
    <ul>
       <?php
-         require($_SERVER['DOCUMENT_ROOT'] . "/iit/quiz3/conn.php");
-         $db = new mysqli($hostname, $username, $password, $database);
-
-         if ($db->connect_error) {
-            echo '<div class="messages">Could not connect to the database. Error: ';
-            echo $db->connect_error . '</div>';
-         }
-
          $query = 'SELECT * FROM `myLabs`';
          $result = $db->query($query);
          $numRecords = $result->num_rows;
@@ -42,5 +115,5 @@ include($_SERVER['DOCUMENT_ROOT'] . "/iit/quiz3/includes/nav.inc.php");
 </div>
 
 <?php
-include($_SERVER['DOCUMENT_ROOT'] . "/iit/quiz3/includes/foot.inc.php");
+   include($_SERVER['DOCUMENT_ROOT'] . "/iit/quiz3/includes/foot.inc.php");
 ?>

@@ -1,7 +1,11 @@
 <?php
-  //using server root to get to includes
+  //Using session superglobal for all pages that care about who's signed in
+    //https://stackoverflow.com/questions/7129498/write-session-start-on-1-page-or-all-pages
+    //https://www.w3schools.com/php/php_sessions.asp
+  session_start();
+  //Using server root to get to includes
     //https://stackoverflow.com/questions/3952590/php-how-to-find-application-root
-include($_SERVER['DOCUMENT_ROOT'] . "/iit/quiz3/includes/head.inc.php");
+  include($_SERVER['DOCUMENT_ROOT'] . "/iit/quiz3/includes/head.inc.php");
 ?>
 
 <header>
@@ -9,6 +13,10 @@ include($_SERVER['DOCUMENT_ROOT'] . "/iit/quiz3/includes/head.inc.php");
   <h1>Homepage</h1>
   <p>Navigate using the dropdown menus below, click the underlined text above to return here</p>
 </header>
+
+<?php
+  include($_SERVER['DOCUMENT_ROOT'] ."/iit/quiz3/includes/nav.inc.php");
+?>
 
 <!-- Validate user -->
 <?php
@@ -25,8 +33,8 @@ include($_SERVER['DOCUMENT_ROOT'] . "/iit/quiz3/includes/head.inc.php");
   $loginName = "";
 
   if(isset($_POST["signin"])) {
-    $loginUser = $_POST["user"];
-    $loginPass = $_POST["pass"];
+    $loginUser = trim($_POST["user"]);
+    $loginPass = trim($_POST["pass"]);
     //These sources helped me formulate my SQL query
       //https://stackoverflow.com/questions/4253960/sql-how-to-properly-check-if-a-record-exists
       //https://stackoverflow.com/questions/11784289/does-it-make-sense-to-use-limit-1-in-a-query-select-1
@@ -38,7 +46,7 @@ include($_SERVER['DOCUMENT_ROOT'] . "/iit/quiz3/includes/head.inc.php");
     //check if this user exists
     if($numRecords > 0) {
       $isSignedIn = true;
-      $loginName = $record["name"];
+      $loginName = htmlspecialchars($record["name"]);
       if($record["type"] == "admin") {
         $isAdmin = true;
       }
@@ -46,11 +54,9 @@ include($_SERVER['DOCUMENT_ROOT'] . "/iit/quiz3/includes/head.inc.php");
     } else {
       $invalidLogin = true;
     }
-  }
-?>
 
-<?php
-include($_SERVER['DOCUMENT_ROOT'] ."/iit/quiz3/includes/nav.inc.php");
+    $_SESSION["isAdmin"] = $isAdmin;
+  }
 ?>
 
 <!-- Have user sign in  with a form, or if they're already signed in, welcome them and display signout button -->
@@ -65,15 +71,15 @@ include($_SERVER['DOCUMENT_ROOT'] ."/iit/quiz3/includes/nav.inc.php");
     } else {
       echo '<h3>Sign in</h3>';
       echo
-      '<form id="signInForm" name="signInForm" autocomplete="off" action="./" method="post">
+      '<form id="signInForm" name="signInForm" autocomplete="off" action="" method="post">
         <label for="user">Username:</label>
           <input type="text" name="user" id="user">
           <label for="pass">Password:</label>
-          <input type="text" name="pass" id="pass">
+          <input type="password" name="pass" id="pass">
           <input type="submit" value="Sign In" id="signin" name="signin">
       </form>';
       if($invalidLogin) {
-        echo '<br><p style="color:red">ERROR: Invalid username or password. Please try again.</p>';
+        echo '<br><p class="messages">ERROR: Invalid username or password. Please try again.</p>';
       }
     }
   ?>
@@ -99,5 +105,5 @@ include($_SERVER['DOCUMENT_ROOT'] ."/iit/quiz3/includes/nav.inc.php");
 </div>
 
 <?php
-include($_SERVER['DOCUMENT_ROOT'] . "/iit/quiz3/includes/foot.inc.php");
+  include($_SERVER['DOCUMENT_ROOT'] . "/iit/quiz3/includes/foot.inc.php");
 ?>
