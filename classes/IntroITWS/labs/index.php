@@ -61,7 +61,7 @@
          echo "test";
          $statement = $db->prepare($insQuery);
          echo "test";
-         $statement->bind_param("sss", $lastNameForDb, $firstNamesForDb, $dobForDb);
+         $statement->bind_param("sss", $title, $desc, $link);
          echo "test";
          $statement->execute();
          echo "test";
