@@ -52,12 +52,23 @@
       }
 
       if($errors == "") {
+         echo "test. ";
          $insQuery = "insert into myLabs (`title`,`desc`,`link`) values(?,?,?)";
+         echo "test. ";
+
          $statement = $db->prepare($insQuery);
+         echo "test. ";
+
          //add a slash to link to save it as a valid relative link to a lab folder
-         $statement->bind_param("sss", $title, $desc, $link . "/");
+         $statement->bind_param("sss", $title, $desc, $link . (substr($link, -1) == "/" ? "" : "/"));
+         echo "test. ";
+
          $statement->execute();
+         echo "test. ";
+
          $statement->close();
+         echo "test. ";
+
       }
    }
 ?>
