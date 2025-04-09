@@ -30,8 +30,7 @@ empty is cool because it checks if a variable isn't set or converts to false
 
 These sources helped me formulate my SQL queries  
 >https://stackoverflow.com/questions/4253960/sql-how-to-properly-check-if-a-record-exists   
-https://stackoverflow.com/questions/11784289/    does-it-make-sense-to-use-limit-1-in-a-query-select-1   
+https://stackoverflow.com/questions/11784289/    does-it-make-sense-to-use-limit-1-in-a-query-select-1 
 
-Unset PHP after adding lab so that reloading doesn't resubmit  
->//https://stackoverflow.com/questions/6320113/how-to-prevent-form-resubmission-when-page-is-refreshed-f5-ctrlr  
-//https://www.php.net/manual/en/function.unset.php    
+Function to sanitize links to be safe urls
+>https://gist.github.com/sumanthkumarc/2de2e2cc06c648a9f52c121501a181df

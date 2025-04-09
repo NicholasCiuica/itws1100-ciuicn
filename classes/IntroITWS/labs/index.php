@@ -31,9 +31,9 @@
    $focusId == "";
 
    if(isset($_POST["add"])) {
-      $title = trim($_POST["title"]);
-      $desc = trim($_POST["desc"]);
-      $link = trim($_POST["link"]);
+      $title = $_POST["title"];
+      $desc = $_POST["desc"];
+      $link = $_POST["link"];
 
       if ($title == '') {
          $errors .= '<li>Title may not be blank</li>';
@@ -49,17 +49,19 @@
       }
 
       if($errors == "") {
+         $titleForDb = trim($title);
+         $descForDb = trim($desc);
+
+         include($_SERVER['DOCUMENT_ROOT'] . "/iit/quiz3/filename_sanitizer.php");
+         $safeLink = filename_sanitizer($link);
          //add a slash to link to save it as a valid relative link to a lab folder
-         $linkForDb = $link . (substr($link, -1) == "/" ? "" : "/");
+         $linkForDb = $safeLink . (substr($safeLink, -1) == "/" ? "" : "/");
 
          $insQuery = "insert into myLabs (`title`,`desc`,`link`) values(?,?,?)";
          $statement = $db->prepare($insQuery);
-         $statement->bind_param("sss", $title, $desc, $linkForDb);
+         $statement->bind_param("sss", $titleForDb, $descForDb, $linkForDb);
          $statement->execute();
          $statement->close();
-
-         //once a lab has been added, unset POST so that reloading doesn't resubmit
-         unset($_POST);
       }
    }
 ?>
