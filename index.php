@@ -22,16 +22,16 @@
     echo 'Could not connect to the database. Error:' . $db->connect_error ;
   }
 
-  //load up the user if they are signed in
+  //remove user session info if user chooses to sign out
+  if(isset($_POST["signout"])) {
+    $_SESSION["isSignedIn"] = false;
+    $_SESSION["isAdmin"] = false;
+    $_SESSION["loginName"] = "";
+  }
+  //load up the user if they are signed in, otherwise set to defaults
   $isSignedIn = !empty($_SESSION["isSignedIn"]) ? $_SESSION["isSignedIn"] : false;
   $isAdmin = !empty($_SESSION["isAdmin"]) ? $_SESSION["isAdmin"] : false;
   $loginName = !empty($_SESSION["loginName"]) ? $_SESSION["loginName"] : "";
-  //or erase them if they've decided to sign out
-  if(isset($_POST["signout"])) {
-    $isSignedIn = false;
-    $isAdmin = false;
-    $loginName = "";
-  }
   
   $invalidLogin = false;
   $loginUser = "";

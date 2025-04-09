@@ -64,9 +64,9 @@
 <!-- Form to add labs if admin -->
 <?php
    if($_SESSION["isAdmin"] == true) {
-      echo '<h3>Add New Lab</h3>';
       echo
       '<div class="block">
+         <h3>Add New Lab</h3>
          <form id="addLabForm" name="addLabForm" autocomplete="off" action="" method="post">
             <label for="title">Lab title:</label>
             <input type="text" name="title" id="title">
@@ -78,7 +78,7 @@
             <input type="text" name="link" id="link">
             <br>
             <input type="submit" value="Add Lab" id="add" name="add">
-         </form>;
+         </form>
       </div>';
 
       if ($errors != '') {
