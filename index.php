@@ -10,10 +10,6 @@
   <p>Navigate using the dropdown menus below, click the underlined text above to return here</p>
 </header>
 
-<?php
-  include($_SERVER['DOCUMENT_ROOT'] ."/iit/quiz3/includes/nav.inc.php");
-?>
-
 <!-- Validate user -->
 <?php
   require($_SERVER['DOCUMENT_ROOT'] ."/iit/quiz3/conn.php");
@@ -61,6 +57,10 @@
     $_SESSION["isAdmin"] = $isAdmin;
     $_SESSION["loginName"] = $loginName;
   }
+?>
+
+<?php
+  include($_SERVER['DOCUMENT_ROOT'] ."/iit/quiz3/includes/nav.inc.php");
 ?>
 
 <!-- Have user sign in  with a form, or if they're already signed in, welcome them and display signout button -->

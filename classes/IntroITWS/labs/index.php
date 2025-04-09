@@ -12,10 +12,6 @@
    <p>Intro to ITWS</p>
 </header>
 
-<?php
-   include($_SERVER['DOCUMENT_ROOT'] . "/iit/quiz3/includes/nav.inc.php");
-?>
-
 <!-- Add new lab to database -->
 <?php
    require($_SERVER['DOCUMENT_ROOT'] . "/iit/quiz3/conn.php");
@@ -54,24 +50,18 @@
       if($errors == "") {
          //add a slash to link to save it as a valid relative link to a lab folder
          $linkForDb = $link . (substr($link, -1) == "/" ? "" : "/");
-         echo "test. ";
+
          $insQuery = "insert into myLabs (`title`,`desc`,`link`) values(?,?,?)";
-         echo "test. ";
-
          $statement = $db->prepare($insQuery);
-         echo "test. ";
-
          $statement->bind_param("sss", $title, $desc, $linkForDb);
-         echo "test. ";
-
          $statement->execute();
-         echo "test. ";
-
          $statement->close();
-         echo "test. ";
-
       }
    }
+?>
+
+<?php
+   include($_SERVER['DOCUMENT_ROOT'] . "/iit/quiz3/includes/nav.inc.php");
 ?>
 
 <!-- Form to add labs if admin -->

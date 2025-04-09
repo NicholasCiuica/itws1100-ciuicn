@@ -34,6 +34,10 @@ header a {
   color: black;
 }
 
+#content-container {
+  padding-bottom: 5rem;
+}
+
 .block {
   background-color: var(--primary-color);
   border-radius: 1rem;
@@ -57,10 +61,6 @@ header a {
 
 .block li {
   padding-left: 0.5rem;
-}
-
-.block:last-of-type {
-  margin-bottom: 5rem;
 }
 
 .block:hover {
