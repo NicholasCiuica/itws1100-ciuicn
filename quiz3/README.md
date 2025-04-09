@@ -7,10 +7,11 @@ I add a form to add new labs.
 
 I did not see a use for the myFooters or myProjects database tables when following the quiz instructions so I ended up not adding them.
 
-**Credentials for my sign-in feature, added to mySiteUsers  using SQL:**
-INSERT INTO `mySiteUsers`(`id`, `user`, `pass`, `name`, `type`) VALUES 
-(0, "ciuicn", "secret", "Nicholas Ciuica", "admin"),
-(1, "teacher", "guess", "Professor Plotka or TA Ola", "user");
+**Credentials for my sign-in feature, added to mySiteUsers using SQL:**
+
+INSERT INTO `mySiteUsers`(`id`, `user`, `pass`, `name`, `type`) VALUES   
+(0, "ciuicn", "secret", "Nicholas Ciuica", "admin"),    
+(1, "teacher", "guess", "Professor Plotka or TA Ola", "user");    
 
 I used sample code from Lab 9 and various online sources to convert my web server's iit directory into a fully modularized, PHP-integrated website.
 
