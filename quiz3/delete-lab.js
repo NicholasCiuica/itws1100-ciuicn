@@ -16,7 +16,7 @@ $(document).ready(function() {
         data: { "id" : labId },
 
         success: function() {
-          $("#lab-" + curId).closest("li").remove();
+          $(curId).closest("li").remove();
           alert(labName + " deleted");
         },
 
