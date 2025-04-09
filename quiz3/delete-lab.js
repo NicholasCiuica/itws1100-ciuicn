@@ -12,7 +12,7 @@ $(document).ready(function() {
       
       $.ajax({
         type: "post",
-        url: "delete-lab.php",
+        url: "/iit/quiz3/delete-lab.php",
         dataType: "json",
         data: { "id" : labId },
 
