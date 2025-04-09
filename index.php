@@ -36,6 +36,8 @@
   if(isset($_POST["signin"])) {
     $loginUser = trim($_POST["user"]);
     $loginPass = trim($_POST["pass"]);
+
+    //search for the user in db using their input credentials
     $query = 'SELECT * FROM mySiteUsers WHERE user = "' . $loginUser . '" AND pass = "' . $loginPass . '" LIMIT 1';
     $result = $db->query($query);
     $numRecords = $result->num_rows;
@@ -63,16 +65,19 @@
   include($_SERVER['DOCUMENT_ROOT'] ."/iit/quiz3/includes/nav.inc.php");
 ?>
 
-<!-- Have user sign in  with a form, or if they're already signed in, welcome them and display signout button -->
+<!-- Have user sign in with a form, or if they're already signed in, welcome them and display signout button -->
 <div class="block">
   <?php
+    //signout button
     if($isSignedIn) {
       echo '<h3>Welcome, ' . $loginName . '!</h3>';
       echo
       '<form id="signOutForm" name="signOutForm" action="./" method="post">
         <input type="submit" value="Sign Out" id="signout" name="signout">
       </form>';
-    } else {
+    } 
+    //signin form
+    else {
       echo '<h3>Sign in</h3>';
       echo
       '<form id="signInForm" name="signInForm" autocomplete="off" action="" method="post">

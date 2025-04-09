@@ -30,11 +30,13 @@
    $errors = "";
    $focusId == "";
 
+   //try to add a new lab
    if(isset($_POST["add"])) {
       $title = $_POST["title"];
       $desc = $_POST["desc"];
       $link = $_POST["link"];
 
+      //error if one of the required fields is empty
       if ($title == '') {
          $errors .= '<li>Title may not be blank</li>';
          if ($focusId == '') $focusId = '#title';
@@ -48,14 +50,13 @@
          if ($focusId == '') $focusId = '#link';
       }
 
+      //insert new lab into database if no errors
       if($errors == "") {
          $titleForDb = trim($title);
          $descForDb = trim($desc);
 
-         include($_SERVER['DOCUMENT_ROOT'] . "/iit/quiz3/filename_sanitizer.php");
-         $safeLink = filename_sanitizer($link);
-         //add a slash to link to save it as a valid relative link to a lab folder
-         $linkForDb = $safeLink . (substr($safeLink, -1) == "/" ? "" : "/");
+         include($_SERVER['DOCUMENT_ROOT'] . "/iit/quiz3/sanitize.php");
+         $linkForDb = sanitizeFileName($link);
 
          $insQuery = "insert into myLabs (`title`,`desc`,`link`) values(?,?,?)";
          $statement = $db->prepare($insQuery);
@@ -95,6 +96,7 @@
             <input type="submit" value="Add Lab" id="add" name="add">
          </form>';
 
+      //display input errors as a list
       if ($errors != '') {
          echo '<div class="messages"><h4>Lab could not be added, please correct the following errors:</h4><ul>';
          echo $errors;
@@ -123,6 +125,7 @@
          $result = $db->query($query);
          $numRecords = $result->num_rows;
 
+         //display list of labs from database
          for ($i = 0; $i < $numRecords; $i++) {
             $record = $result->fetch_assoc();
             echo '<li id="lab-' . $record["id"] . '">';

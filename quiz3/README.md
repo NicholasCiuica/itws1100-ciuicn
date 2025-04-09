@@ -3,9 +3,17 @@ When the homepage is loaded with a post request, I try to find the user's creden
 If I find the user, I sign them in and keep them signed in using session storage.
 
 If a user goes to the labs homepage (now index.php in classes/IntroITWS/) while they are signed in as an admin user,
-I add a form to add new labs.
+I add a form to add new labs. Each lab is listed on this page, and admins have the option to delete labs by clicking the deleteLab
+button assigned to the lab they want to delete.
 
-I did not see a use for the myFooters or myProjects database tables when following the quiz instructions so I ended up not adding them.
+My quiz3 folder conains my archived index.html website homepage, a folder of included php modules for building all my sites,
+and a folder of sql commands that I used to make and populate my database tables.
+It also contains my database's contents at the time of submission and the CREATE commands used to make them (ciuicn-mySite.sql).
+Additionally, it contains conn.php, which contains my database credentials, delete-lab.js, which triggers delete-lab.php whenever
+a deleteLab button is clicked on my labs homepage, and sanitize.php, which includes a php function that removes reserved or unsafe
+characters from an input string so that it may be used as a url.
+
+I did not see a use for the myFooters or myProjects database tables when following the quiz instructions so I ended up not creating them.
 
 **Credentials for my sign-in feature, added to mySiteUsers using SQL:**
 
@@ -32,5 +40,5 @@ These sources helped me formulate my SQL queries
 >https://stackoverflow.com/questions/4253960/sql-how-to-properly-check-if-a-record-exists   
 https://stackoverflow.com/questions/11784289/    does-it-make-sense-to-use-limit-1-in-a-query-select-1 
 
-Function to sanitize links to be safe urls
->https://gist.github.com/sumanthkumarc/2de2e2cc06c648a9f52c121501a181df
+Sanitizing links of unsafe or reserved characters
+>//https://stackoverflow.com/questions/695438/what-are-the-safe-characters-for-making-urls
