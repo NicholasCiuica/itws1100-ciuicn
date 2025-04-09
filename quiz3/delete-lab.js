@@ -13,7 +13,6 @@ $(document).ready(function() {
       $.ajax({
         type: "post",
         url: "/iit/quiz3/delete-lab.php",
-        dataType: "json",
         data: { "id" : labId },
 
         success: function() {
@@ -21,8 +20,8 @@ $(document).ready(function() {
           alert(labName + " deleted");
         },
 
-        error: function(msg) {
-          alert(msg.status + " " + msg.statusText);
+        error: function(message) {
+          alert(message);
         }
       });
     }
