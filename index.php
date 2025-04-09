@@ -21,9 +21,17 @@
   if ($db->connect_error) {
     echo 'Could not connect to the database. Error:' . $db->connect_error ;
   }
+
+  //load up the user if they are signed in
   $isSignedIn = !empty($_SESSION["isSignedIn"]) ? $_SESSION["isSignedIn"] : false;
   $isAdmin = !empty($_SESSION["isAdmin"]) ? $_SESSION["isAdmin"] : false;
-  $loginName = !empty($_SESSION["isAdmin"]) ? $_SESSION["isAdmin"] : "";
+  $loginName = !empty($_SESSION["loginName"]) ? $_SESSION["loginName"] : "";
+  //or erase them if they've decided to sign out
+  if(isset($_POST["signout"])) {
+    $isSignedIn = false;
+    $isAdmin = false;
+    $loginName = "";
+  }
   
   $invalidLogin = false;
   $loginUser = "";
