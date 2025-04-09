@@ -67,7 +67,7 @@
 
 <!-- Form to add labs if admin -->
 <?php
-   if($_SESSION["isAdmin"] == true) {
+   if($_SESSION["isAdmin"]) {
       echo
       '<div class="block">
          <h3>Add New Lab</h3>
@@ -124,8 +124,10 @@
             echo '<a href="' . $record["link"] . '">';
             echo $record["title"] . ' (' . $record["desc"] . ')';
             echo '</a>';
-            //add a delete button to each displayed lab
-            echo '<img src="/iit/resources/delete.png" class="deleteLab" width="16" height="16" alt="delete lab"/>';
+            if($_SESSION["isAdmin"]) {
+               //add a delete button to each displayed lab
+               echo '<img src="/iit/resources/delete.png" class="deleteLab" width="16" height="16" alt="delete lab"/>';
+            }
             echo '</li>';
          }
       ?>
