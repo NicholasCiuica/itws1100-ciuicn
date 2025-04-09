@@ -13,7 +13,7 @@ include($_SERVER['DOCUMENT_ROOT'] . "/iit/quiz3/includes/nav.inc.php");
 ?>
 
 <div class="block">
-   Link to our group project's homepage:<br><br>
+   Funny-looking relative link to our group project's homepage:<br><br>
    <!-- relative link between this page and my group project -->
    <a href="../../../../../team09/pages/">../../../../../team09/pages/</a>
 </div>

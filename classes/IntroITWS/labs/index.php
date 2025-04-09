@@ -34,7 +34,6 @@
    $focusId == "";
 
    if(isset($_POST["add"])) {
-      //based on code from Lab 9
       $title = trim($_POST["title"]);
       $desc = trim($_POST["desc"]);
       $link = trim($_POST["link"]);
@@ -52,21 +51,13 @@
          if ($focusId == '') $focusId = '#link';
       }
 
-      //make the link string into a valid relative link pointing to a directory
-      $link = $link . "/";
-
       if($errors == "") {
-         echo "test";
          $insQuery = "insert into myLabs (`title`,`desc`,`link`) values(?,?,?)";
-         echo "test";
          $statement = $db->prepare($insQuery);
-         echo "test";
-         $statement->bind_param("sss", $title, $desc, $link);
-         echo "test";
+         //add a slash to link to save it as a valid relative link to a lab folder
+         $statement->bind_param("sss", $title, $desc, $link . "/");
          $statement->execute();
-         echo "test";
          $statement->close();
-         echo "test";
       }
    }
 ?>
